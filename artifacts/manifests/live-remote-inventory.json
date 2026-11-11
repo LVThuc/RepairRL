@@ -1,7 +1,19 @@
 {
-  "generated_at_utc": "2026-11-11T09:24:45.291885+00:00",
+  "generated_at_utc": "2026-11-11T10:24:18.676126+00:00",
   "root_label": "results-round2",
   "files": [
+    {
+      "path": "cpu-benchmark-samples.json",
+      "bytes": 51353,
+      "sha256": "4cd35e70c7918baff032173dedb7063311b56e70da91f8c618a76a500b6ab1f8",
+      "stable_during_hash": true
+    },
+    {
+      "path": "cpu-benchmark-server.json",
+      "bytes": 170675,
+      "sha256": "b6520fa764ebc0f753dffb70401243e641c66a7be2af62f17ef43a845fa0c834",
+      "stable_during_hash": true
+    },
     {
       "path": "dpo-lr3e6/README.md",
       "bytes": 2287,
@@ -1024,8 +1036,8 @@
     },
     {
       "path": "dpo-selected/M2-hard-v1-runbugrun.jsonl",
-      "bytes": 57876,
-      "sha256": "00a8201c74fe7f3f1cb5033ef13aca0e993c5dbc037880c0ed7750fe31085e59",
+      "bytes": 724453,
+      "sha256": "5ef1b31b6952ffefc38dc88554448163ce7bdde6579d8b82b8358e426ea484e7",
       "stable_during_hash": true
     },
     {
@@ -1050,6 +1062,102 @@
       "path": "grpo-dense/README.md",
       "bytes": 1900,
       "sha256": "5aa47224bdfbd3521f9b5ec8ef5a646b2ce40167f1429566aee248d65a59e224",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/README.md",
+      "bytes": 5209,
+      "sha256": "f10e19151e92d2bedecc70d01e3a0a793180320bfd30b5f8016be58419da6576",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/adapter_config.json",
+      "bytes": 933,
+      "sha256": "118f9dad770515cb744fa285ffcf4bcc778d282922504aa700fae4904a2b9e34",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "5186ebd872b7365efc6e68d3f949ebebc2d7f6d7632cea34922088bc9cbf0583",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/optimizer.pt",
+      "bytes": 148048187,
+      "sha256": "768df27fc687b43f9b1657d0b643721185181689c4130c75bc3a0e270be86114",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/rng_state.pth",
+      "bytes": 14645,
+      "sha256": "4a6fe70e0c8416e4b6bad6ee688e2f26a5b1222ac652490faa64f751b3612514",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/scaler.pt",
+      "bytes": 1383,
+      "sha256": "14ae2a2128444abab378aa06c09a61a84665f758fcc19fc46f5789b0bc1b5665",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/scheduler.pt",
+      "bytes": 1465,
+      "sha256": "3335736e46156923a44a1741f9efc07d5887c057c8fbb15fe18f76013dd70ebd",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/tokenizer.json",
+      "bytes": 11422060,
+      "sha256": "63a2951d5edfa5cc0a2346ef872f8c77a2920274cfc3b503b04e3799104dee80",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/trainer_state.json",
+      "bytes": 195543,
+      "sha256": "d0991a4d9f205d39409932a32d662ed596fd9c52eec94b0e8103833f713ea1c5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/training_args.bin",
+      "bytes": 7185,
+      "sha256": "bf511a6d3ee416c7dcec6c31b618da5d4203ced0cfb0bba3fb0e03c1e2f2bd65",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-1000/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
       "stable_during_hash": true
     },
     {
@@ -1438,8 +1546,8 @@
     },
     {
       "path": "grpo-dense/dev-history.jsonl",
-      "bytes": 2413,
-      "sha256": "24c41a198a12578530c12a093907e6dca2aa6cdf87217a4e900b791c04a3e3c8",
+      "bytes": 3028,
+      "sha256": "fa33fc155baae5211ab5eb5fec15143dd7e64c219d99fd92e46abc491806fa10",
       "stable_during_hash": true
     },
     {
@@ -1456,20 +1564,20 @@
     },
     {
       "path": "grpo-dense/rewards.jsonl",
-      "bytes": 8218208,
-      "sha256": "2537b227b3bcaa50863434daf79d429fdfddc9ec54820e2176746c5ce7cdcc23",
+      "bytes": 10188163,
+      "sha256": "eeadea78749d44d69d43194777588130a9c2126158be14749d1f219d59338991",
       "stable_during_hash": true
     },
     {
       "path": "grpo-dense/rewards.stats.jsonl",
-      "bytes": 134425,
-      "sha256": "510051158b2ad9d523e7532d5457d7ddf0b5ef803d315fc5c211ef8daacc3cc6",
+      "bytes": 168001,
+      "sha256": "766e76861069e4cfd36a7c99e435adac44c987c2c0d1bb0d47233c7deafa92b2",
       "stable_during_hash": true
     },
     {
       "path": "grpo-dense/selection.json",
-      "bytes": 1736,
-      "sha256": "958f095a3c13b46b34d9825331fb479c5ea862e54ce30b7d30d14e40098bb250",
+      "bytes": 1732,
+      "sha256": "eaf8fcb43f5dc7e64c1377c08ba9838fd0fc0087645bb1432083b3963965f617",
       "stable_during_hash": true
     },
     {
@@ -1737,6 +1845,72 @@
       "stable_during_hash": true
     },
     {
+      "path": "grpo-dense/snapshots/step-800/README.md",
+      "bytes": 5209,
+      "sha256": "f10e19151e92d2bedecc70d01e3a0a793180320bfd30b5f8016be58419da6576",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/adapter_config.json",
+      "bytes": 933,
+      "sha256": "118f9dad770515cb744fa285ffcf4bcc778d282922504aa700fae4904a2b9e34",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "9cbc0f973d8543ccd262a4dba1a42b840ec1ec74a7e541f35ff378c9e0d45b73",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/round2-checkpoint.json",
+      "bytes": 25556,
+      "sha256": "353708adbf1b3702d3491d8e154a075cdf9cad851964ad3dee13a15cab910ed0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
       "path": "grpo-dense/variance-rollouts.jsonl",
       "bytes": 291921,
       "sha256": "6e368775427e23619553b2b4ed523511cbbcb9381003d699eb4aaf859439dad6",
@@ -1750,8 +1924,8 @@
     },
     {
       "path": "grpo-followup-queue.json",
-      "bytes": 89,
-      "sha256": "6d69ea88ef86b33bfad3c2dce847949fefb4e93e515a149fe729e7a84c381e0c",
+      "bytes": 90,
+      "sha256": "7e50f9de915533d9b8c1b9a38588c55d343baed3d8c07c84829b1d7459a6b6d6",
       "stable_during_hash": true
     },
     {
@@ -1873,10 +2047,16 @@
       "bytes": 4239,
       "sha256": "8d167661ca7bb3f0dc2fa7d66acdfbe32ac15b14ff2d452d0c473eb3e225b4dc",
       "stable_during_hash": true
+    },
+    {
+      "path": "sft10k/status.json",
+      "bytes": 168,
+      "sha256": "26f35c67fae2b56999c17a04e27d60b96f08cb9109d89ba003131a45550437b7",
+      "stable_during_hash": true
     }
   ],
-  "file_count": 312,
-  "total_bytes": 3322063798,
+  "file_count": 342,
+  "total_bytes": 3652843094,
   "checkpoints": [
     {
       "path": "dpo-lr3e6/checkpoint-132",
@@ -1975,6 +2155,17 @@
       "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
     },
     {
+      "path": "grpo-dense/checkpoint-1000",
+      "classification": "resumable-trainer-state",
+      "step": 1000,
+      "max_steps": 2000,
+      "epoch": 0.5,
+      "missing": [],
+      "corrupt_zip": [],
+      "has_amp_scaler": true,
+      "validation": "required files + zip CRC; no pickle execution; no GPU resume performed"
+    },
+    {
       "path": "grpo-dense/checkpoint-200",
       "classification": "resumable-trainer-state",
       "step": 200,
@@ -2035,6 +2226,11 @@
     },
     {
       "path": "grpo-dense/snapshots/step-600",
+      "classification": "inference-only-adapter",
+      "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
+    },
+    {
+      "path": "grpo-dense/snapshots/step-800",
       "classification": "inference-only-adapter",
       "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
     }
