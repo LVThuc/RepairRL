@@ -276,25 +276,29 @@ def create_app(demo):
     statement, code, hint, output, status, input_status, trace = demo.preview(initial)
     css = """
     .gradio-container {max-width: 1600px !important; margin: auto;}
-    .problem-pane.prose {max-height: 73vh; overflow-y: auto; padding: 8px 18px 18px; border: 1px solid #dce3eb; border-radius: 12px; background: white;}
+    .problem-pane.prose {max-height: 73vh; overflow-y: auto; padding: 8px 18px 18px; border: 1px solid var(--border-color-primary); border-radius: 12px; background: var(--block-background-fill); color: var(--body-text-color); font-size: 16px; line-height: 1.65;}
     .problem-pane .prose {font-size: 16px; line-height: 1.65; max-width: none;}
-    .problem-pane pre {font-size: 14px;}
+    .problem-pane.prose :is(p,li,h1,h2,h3,h4,strong,.katex) {color: var(--body-text-color);}
+    .problem-pane pre {font-size: 14px; background: var(--background-fill-secondary); color: var(--body-text-color);}
+    .problem-pane code {color: var(--body-text-color);}
     .problem-pane h2 {margin-top: 10px;}
     .cm-editor {font-size: 15px !important;}
     .code-panel {min-height: 490px;}
     #action-bar {gap: 8px; align-items: center;}
     #action-bar button {flex-grow: 0 !important; min-height: 34px; padding: 5px 14px;}
-    .diff-summary {padding: 12px; font-weight: 600; color: #24533c;}
-    .diff-summary span {float:right; font-weight:400; color:#64748b; font-size:12px;}
-    .diff-scroll {max-height: 62vh; overflow: auto; border:1px solid #dce3eb; border-radius:8px;}
+    .diff-summary {padding: 12px; font-weight: 600; color: var(--body-text-color);}
+    .diff-summary span {float:right; font-weight:400; color:var(--body-text-color-subdued); font-size:12px;}
+    .diff-scroll {max-height: 62vh; overflow: auto; border:1px solid var(--border-color-primary); border-radius:8px;}
     .code-diff {width:100%; border-collapse:collapse; font-family:monospace; font-size:14px;}
     .code-diff td {padding:3px 6px; vertical-align:top; border:0;}
-    .code-diff td:nth-child(1), .code-diff td:nth-child(2) {width:32px; text-align:right; color:#64748b; user-select:none;}
+    .code-diff td:nth-child(1), .code-diff td:nth-child(2) {width:32px; text-align:right; color:var(--body-text-color-subdued); user-select:none;}
     .code-diff td:nth-child(3) {width:15px;}
     .code-diff pre {margin:0; white-space:pre; font:inherit; background:transparent; color:inherit;}
-    .diff-added {background:#dcfce7; color:#14532d;}
-    .diff-removed {background:#fee2e2; color:#7f1d1d;}
-    .diff-gap,.diff-empty {padding:20px; color:#64748b;}
+    .code-diff tr.diff-added {background:#dcfce7; color:#14532d;}
+    .dark .code-diff tr.diff-added {background:#143c2a; color:#bbf7d0;}
+    .code-diff tr.diff-removed {background:#fee2e2; color:#7f1d1d;}
+    .dark .code-diff tr.diff-removed {background:#482027; color:#fecaca;}
+    .diff-gap,.diff-empty {padding:20px; color:var(--body-text-color-subdued);}
     """
     empty_diff = (
         '<div class="diff-empty">Changed lines will appear here after Fix bug.</div>'
