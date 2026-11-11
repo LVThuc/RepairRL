@@ -240,3 +240,9 @@ Do not assume the latest on-disk trainer produced every active run.
 reranks the top three on all 147 distinct dev problems at FP16 inference precision,
 and only then evaluates the selected adapter. This is model selection, not an
 assertion that the selected model beats M1. Check live status for completion.
+
+### DPO stop decision (2026-11-11)
+
+The user stopped the round-2 DPO queue near the end of its first configuration. Optimizer checkpoints through step 396 are preserved; further learning-rate and RPO configurations were cancelled. The saved dev-screen winner is step 66 (21/60), compared with the M1 parent at 20/60. Later screened scores were 20/60 at steps 198 and 264, and 19/60 at step 330. This is late dev degradation, consistent with overfitting or preference/execution objective mismatch; the cause has not been established, and this does not prove DPO generally worsens repair.
+
+`scripts/round2_eval_selected_dpo.py` freezes that existing 60-task-dev selection and evaluates it on the two held-out benchmarks under both existing controllers. The originally planned top-three reranking on all 147 dev problems is skipped for this user-requested evaluation. Its selection metadata discloses this change. No held-out result is used to pick the snapshot. Evaluation runs on remote GPU 0 under `repairrl-dpo-eval`; the training service is stopped with autostart disabled. GRPO continues on GPU 1. Step 66 is an inference adapter; the later optimizer checkpoints contain resumable trainer states. Do not conflate their resume capabilities.
