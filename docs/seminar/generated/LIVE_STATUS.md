@@ -1,10 +1,10 @@
 # Live experiment status
 
-Snapshot: 2026-11-11T11:46:26.280823+00:00
+Snapshot: 2026-11-11T11:48:39.295669+00:00
 
 This is a point-in-time view, not completed held-out evidence. A running service may be waiting, not optimizing.
 
-Latest GRPO optimizer step observed in mirrored log: 1200.
+Latest GRPO optimizer step observed in mirrored log: 1205.
 
 ## Remote queues
 
@@ -36,7 +36,7 @@ Latest GRPO optimizer step observed in mirrored log: 1200.
   },
   "grpo-dense/selection.json": {
     "state": "training",
-    "latest_dev_step": 1000,
+    "latest_dev_step": 1200,
     "selected_dev": {
       "n": 60,
       "pass@1": 0.4166666666666667,
@@ -106,7 +106,7 @@ Latest GRPO optimizer step observed in mirrored log: 1200.
   "grpo-followup-queue.json": {
     "state": "waiting_for_grpo_dense",
     "pid": 2610,
-    "updated_at": 1794397552.6424034
+    "updated_at": 1794397652.6473432
   }
 }
 ```
