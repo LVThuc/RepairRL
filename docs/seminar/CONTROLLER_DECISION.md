@@ -1,3 +1,5 @@
 # Controller decision: V1 only
 
 On 2026-11-11 the user dropped V3 from remaining evaluations. Existing V3 traces and results remain historical artifacts. Pretrained, selected DPO, selected GRPO, and final comparison jobs now use V1 only. The frozen evaluator and generation/test settings remain unchanged; required headline coverage is now 8 results (4 models × 2 benchmarks). PT-base is an additional comparator.
+
+GPU0 follow-up: `scripts/grpo_gpu0_followup.py`, managed remotely as `repairrl-grpo-gpu0`, waits for DPO evaluation to complete and for a later GRPO checkpoint strictly better than step800 by the existing dev tuple (pass@1, partial fraction). It loads no model while waiting. It freezes one selection and evaluates both held-out benchmarks with V1, saving separately under `results/round2/grpo-interim-gpu0/`. It skips if GRPO completes without a better dev checkpoint. This is one interim evaluation, and held-out outcomes must not determine ongoing training or later model selection.
