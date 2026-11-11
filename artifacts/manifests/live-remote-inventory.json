@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-11T08:06:55.648628+00:00",
+  "generated_at_utc": "2026-11-11T08:37:27.001506+00:00",
   "root_label": "results-round2",
   "files": [
     {
@@ -105,6 +105,102 @@
       "stable_during_hash": true
     },
     {
+      "path": "dpo-lr3e6/checkpoint-198/README.md",
+      "bytes": 5208,
+      "sha256": "e09f49c136ed8aced70b39e69a786e465ee02a95530423f2404851f008463de9",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/adapter_config.json",
+      "bytes": 933,
+      "sha256": "c000532af851e5b4466be631f592175cecb06ed7f21441c1085695cfea4320c0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "be9808487a649fa32bda6ec7b69f42d87c63b4c0cb3702093a04140b552dec65",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/optimizer.pt",
+      "bytes": 148048187,
+      "sha256": "a981f2d612ec4b51c73ef13e04df6d0524529904c7ae3c2d7398012ca750c9fb",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/rng_state.pth",
+      "bytes": 14645,
+      "sha256": "f4a9f217e852f439efa6bd32fde98d6867f11aa6ea13ddc021ba10af6a0b0934",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/scaler.pt",
+      "bytes": 1383,
+      "sha256": "164af1077480509b451892399bda766dd8d4766a457569797f07bc5092dde7c2",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/scheduler.pt",
+      "bytes": 1465,
+      "sha256": "00b76a6f35bf2617304aafb870c15861f51b541bffe3d351b40d68bbc3ef0a8e",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/trainer_state.json",
+      "bytes": 21512,
+      "sha256": "e05442c2c73ff1beef7b86ca334c9761278f9e0daabf240ed4765fb783313130",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/training_args.bin",
+      "bytes": 6737,
+      "sha256": "d6c0cdeb4b8dd2c41c9a41860408b2e6bf117973c0fcb2500373fbf7ce885015",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
       "path": "dpo-lr3e6/checkpoint-66/README.md",
       "bytes": 5208,
       "sha256": "e09f49c136ed8aced70b39e69a786e465ee02a95530423f2404851f008463de9",
@@ -202,8 +298,8 @@
     },
     {
       "path": "dpo-lr3e6/dev-history.jsonl",
-      "bytes": 1211,
-      "sha256": "a09e0d241e780431f9f790d53e596bfa140fb97406633689c9fd8d1859e184c6",
+      "bytes": 2454,
+      "sha256": "cd4b8c0b13e847e2af98685e2e6b92fc379ed8a11287ea58adcafb8d0c8b89a7",
       "stable_during_hash": true
     },
     {
@@ -220,8 +316,8 @@
     },
     {
       "path": "dpo-lr3e6/selection.json",
-      "bytes": 1716,
-      "sha256": "4de49abb3803fb265d22a1607c4066c99b7272b2b18fce3449a0bf1415489c8a",
+      "bytes": 1717,
+      "sha256": "5752f9bfd8b12a625161e75a5e96f254ff6aa5fbd232754f60f5fbb027140c58",
       "stable_during_hash": true
     },
     {
@@ -286,6 +382,138 @@
     },
     {
       "path": "dpo-lr3e6/snapshots/step-0/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/README.md",
+      "bytes": 5208,
+      "sha256": "e09f49c136ed8aced70b39e69a786e465ee02a95530423f2404851f008463de9",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/adapter_config.json",
+      "bytes": 933,
+      "sha256": "c000532af851e5b4466be631f592175cecb06ed7f21441c1085695cfea4320c0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "64058daf6aeb7cfb66bd3d3e1eb94351413b54bf91ed25926a3d5aa2b7bb69b3",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/round2-checkpoint.json",
+      "bytes": 14537,
+      "sha256": "de93e0e02ae8e456b392573bd30972528c0e307b4ee5b44a70edf8ca38c3270b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/README.md",
+      "bytes": 5208,
+      "sha256": "e09f49c136ed8aced70b39e69a786e465ee02a95530423f2404851f008463de9",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/adapter_config.json",
+      "bytes": 933,
+      "sha256": "c000532af851e5b4466be631f592175cecb06ed7f21441c1085695cfea4320c0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "be9808487a649fa32bda6ec7b69f42d87c63b4c0cb3702093a04140b552dec65",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/round2-checkpoint.json",
+      "bytes": 14606,
+      "sha256": "1d1b35912368c4b549d09eac5db1a446abc158ba14fed63314c288dabbc29520",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198/vocab.json",
       "bytes": 2776833,
       "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
       "stable_during_hash": true
@@ -358,8 +586,8 @@
     },
     {
       "path": "dpo-lr3e6.log",
-      "bytes": 128731,
-      "sha256": "618f115fd41bc3d3675833ca8fa2c1a48c7a4d0dc18d7f1343a6effddff445ff",
+      "bytes": 146532,
+      "sha256": "86c82d2c7284450fcb69e45e44eba977e755d9ce0b98510d7d1abeee7cad7936",
       "stable_during_hash": true
     },
     {
@@ -670,8 +898,8 @@
     },
     {
       "path": "grpo-dense/dev-history.jsonl",
-      "bytes": 1806,
-      "sha256": "b2dc1ac485d501b01ef9973984797d068b90ebaa1cf1795a94d402a45c1d39bc",
+      "bytes": 2413,
+      "sha256": "24c41a198a12578530c12a093907e6dca2aa6cdf87217a4e900b791c04a3e3c8",
       "stable_during_hash": true
     },
     {
@@ -688,20 +916,20 @@
     },
     {
       "path": "grpo-dense/rewards.jsonl",
-      "bytes": 6140523,
-      "sha256": "6a3dd8d63bf756f22d2ff15c7dd1c3676715d602c90cbe47ae7255b7d05da5ee",
+      "bytes": 6818945,
+      "sha256": "29bb71f3dc500f4b9ae6430ac24b933ad1c421d8b5d9b7db9ea2d7534fe6dd99",
       "stable_during_hash": true
     },
     {
       "path": "grpo-dense/rewards.stats.jsonl",
-      "bytes": 100775,
-      "sha256": "36f8de3b77012c30c007253002f2e49371a5f1204594774e103ff4a32ccbd797",
+      "bytes": 110486,
+      "sha256": "ea92bcc82797b324b38deab7175fcc75fbbb856ac0e001b7a8a9e4e6f00f0fe1",
       "stable_during_hash": true
     },
     {
       "path": "grpo-dense/selection.json",
       "bytes": 1736,
-      "sha256": "b9ef597d016df8bc29e5329a6fd03e783ec091bd8b38da9c8de276450cb56fe0",
+      "sha256": "958f095a3c13b46b34d9825331fb479c5ea862e54ce30b7d30d14e40098bb250",
       "stable_during_hash": true
     },
     {
@@ -903,6 +1131,72 @@
       "stable_during_hash": true
     },
     {
+      "path": "grpo-dense/snapshots/step-600/README.md",
+      "bytes": 5209,
+      "sha256": "f10e19151e92d2bedecc70d01e3a0a793180320bfd30b5f8016be58419da6576",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/adapter_config.json",
+      "bytes": 933,
+      "sha256": "118f9dad770515cb744fa285ffcf4bcc778d282922504aa700fae4904a2b9e34",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "600620459c696b7c0a8c3facac780ccabb103dba256081903c9512752a90b27b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/round2-checkpoint.json",
+      "bytes": 25548,
+      "sha256": "2f6ea706e9841fc3774177741863353e83b8b8295ecd22177afc69e942f9312d",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
       "path": "grpo-dense/variance-rollouts.jsonl",
       "bytes": 291921,
       "sha256": "6e368775427e23619553b2b4ed523511cbbcb9381003d699eb4aaf859439dad6",
@@ -917,7 +1211,7 @@
     {
       "path": "grpo-followup-queue.json",
       "bytes": 89,
-      "sha256": "d6241f15668325d5e3f12661c6afdce47402bb3dcc59e2b46d0137a343626636",
+      "sha256": "4117e287583ae21d245ec4b960564f1be88c8006b0e1e5bc9e5806204e37269d",
       "stable_during_hash": true
     },
     {
@@ -1041,8 +1335,8 @@
       "stable_during_hash": true
     }
   ],
-  "file_count": 173,
-  "total_bytes": 1681145161,
+  "file_count": 222,
+  "total_bytes": 2189186067,
   "checkpoints": [
     {
       "path": "dpo-lr3e6/checkpoint-132",
@@ -1050,6 +1344,17 @@
       "step": 132,
       "max_steps": 399,
       "epoch": 0.9943502824858758,
+      "missing": [],
+      "corrupt_zip": [],
+      "has_amp_scaler": true,
+      "validation": "required files + zip CRC; no pickle execution; no GPU resume performed"
+    },
+    {
+      "path": "dpo-lr3e6/checkpoint-198",
+      "classification": "resumable-trainer-state",
+      "step": 198,
+      "max_steps": 399,
+      "epoch": 1.4896421845574388,
       "missing": [],
       "corrupt_zip": [],
       "has_amp_scaler": true,
@@ -1068,6 +1373,16 @@
     },
     {
       "path": "dpo-lr3e6/snapshots/step-0",
+      "classification": "inference-only-adapter",
+      "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-132",
+      "classification": "inference-only-adapter",
+      "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
+    },
+    {
+      "path": "dpo-lr3e6/snapshots/step-198",
       "classification": "inference-only-adapter",
       "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
     },
@@ -1121,6 +1436,11 @@
     },
     {
       "path": "grpo-dense/snapshots/step-400",
+      "classification": "inference-only-adapter",
+      "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
+    },
+    {
+      "path": "grpo-dense/snapshots/step-600",
       "classification": "inference-only-adapter",
       "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
     }

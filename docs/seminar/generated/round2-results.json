@@ -127,5 +127,66 @@
     "summary_path": "results/round2/baselines/M0-v31-humanevalpack.summary.json",
     "summary_sha256": "3c90062be0dec7f3aee11fe863b6d51531de7540108acdc2719ba1e75b85d243",
     "status": "completed-evaluation"
+  },
+  {
+    "arm": "M1",
+    "controller": "v1",
+    "benchmark": "runbugrun",
+    "metrics": {
+      "n": 200,
+      "pass@1": 0.34,
+      "agent@3": 0.4,
+      "avg_attempts": 2.27,
+      "validity": 0.9933920704845814,
+      "partial_fraction": 0.4520584224879381,
+      "avg_generation_tokens": 171.8259911894273,
+      "avg_generation_seconds": 3.1226854654143312,
+      "avg_patch_seconds": 3.3564645013980163,
+      "tests_run": 4174,
+      "categories": {
+        "pass": 80,
+        "incorrect_output": 276,
+        "runtime_error": 95,
+        "invalid_code": 3
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 12
+    },
+    "summary_path": "results/round2/baselines-common-parent/M1-v1-runbugrun.summary.json",
+    "summary_sha256": "ed50ef559f5ad9730f7713ef0ea55bc0d135b8976fe8ed03302065abde0dbaab",
+    "status": "completed-evaluation"
+  },
+  {
+    "arm": "M1",
+    "controller": "v1",
+    "benchmark": "humanevalpack",
+    "metrics": {
+      "n": 164,
+      "pass@1": 0.6158536585365854,
+      "agent@3": 0.6585365853658537,
+      "avg_attempts": 1.725609756097561,
+      "validity": 1.0,
+      "partial_fraction": 0.38162544169611307,
+      "avg_generation_tokens": 69.54770318021201,
+      "avg_generation_seconds": 1.2536586881557117,
+      "avg_patch_seconds": 1.4028164570034394,
+      "tests_run": 1374,
+      "categories": {
+        "incorrect_output": 163,
+        "pass": 108,
+        "runtime_error": 12
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 7
+    },
+    "summary_path": "results/round2/baselines-common-parent/M1-v1-humanevalpack.summary.json",
+    "summary_sha256": "a36ba8344a4399068ba46569087dbb71612f32adffd4e7dc2bdc30ed0914a896",
+    "status": "completed-evaluation"
   }
 ]
