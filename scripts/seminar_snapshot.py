@@ -230,6 +230,8 @@ def snapshot():
     for path in candidates:
         report = json.loads(path.read_text())
         protocol = report["protocol"]
+        if protocol["controller"] != "v1":
+            continue
         if (
             protocol["arm"] == "M1"
             and protocol["model"] != "checkpoints/M1-merged-round2"
@@ -249,9 +251,9 @@ def snapshot():
     table = [
         "# Second-round evaluation progress",
         "",
-        f"Completed summary files: {len(final_rows)}/16.",
+        f"Completed summary files: {len(final_rows)}/8.",
         "",
-        "Separate FP16/768-token protocol. Missing rows remain pending. This is not a complete comparison until all required rows exist.",
+        "V1 only going forward; historical V3 summaries remain archived. Separate FP16/768-token protocol. Missing rows remain pending. This is not a complete comparison until all required rows exist.",
         "",
         "| Model | Controller | Benchmark | n | pass@1 | agent@3 |",
         "|---|---|---|---:|---:|---:|",

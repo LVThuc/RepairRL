@@ -39,22 +39,24 @@ def report():
     for path in files:
         value = json.loads(path.read_text())
         p = value["protocol"]
+        if p["controller"] != "v1":
+            continue
         if p["arm"] == "M1" and p["model"] != "checkpoints/M1-merged-round2":
             continue
         reports[(p["arm"], p["controller"], p["benchmark"])] = (path, value)
     expected = [(arm, controller, benchmark) for arm in ("M0", "M1", "M2-hard", "M3-long")
-                for controller in ("v1", "v31") for benchmark in ("runbugrun", "humanevalpack")]
+                for controller in ("v1",) for benchmark in ("runbugrun", "humanevalpack")]
     missing = [key for key in expected if key not in reports]
     atomic_json(root / "report-status.json", {"state": "waiting" if missing else "completed",
                                               "completed_evaluations": len(reports), "missing": missing})
     if missing:
         return False
-    lines = ["# RepairRL round 2 — measured results", "", "Models were selected on dev; both frozen controllers are reported.", ""]
+    lines = ["# RepairRL round 2 — measured results", "", "Models were selected on dev; V1 is the active controller; historical V3 results remain archived.", ""]
     comparisons = []
     keys = ["controller", "benchmark", "data_sha256", "tests_sha256", "task_ids", "max_context",
             "max_new_tokens", "max_attempts", "max_diagnoses", "diagnosis_tokens", "retry_temperature",
             "seed", "quantized", "controller_sha256", "generator_sha256", "grader"]
-    for controller in ("v1", "v31"):
+    for controller in ("v1",):
         for benchmark in ("runbugrun", "humanevalpack"):
             lines += [f"## {benchmark} / {controller}", "", "| Model | pass@1 | agent@3 | validity | diagnosis calls |", "|---|---:|---:|---:|---:|"]
             baseline_path, baseline = reports[("M1", controller, benchmark)]

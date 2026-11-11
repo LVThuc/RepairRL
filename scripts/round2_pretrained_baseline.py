@@ -26,7 +26,7 @@ def main():
                   for f in sorted(Path(snapshot).iterdir()) if f.is_file()],
     })
     pending = [Path("results/round2/baselines-common-parent") / f"M1-{c}-{b}.summary.json"
-               for c in ("v1", "v31") for b in ("runbugrun", "humanevalpack")]
+               for c in ("v1",) for b in ("runbugrun", "humanevalpack")]
     while not all(p.exists() for p in pending):
         status("waiting_for_local_M1_evaluation", pending=[str(p) for p in pending if not p.exists()])
         time.sleep(30)
@@ -37,7 +37,7 @@ def main():
     import torch
     torch.set_num_threads(4)
     frozen = json.loads(Path("results/round2/frozen-protocol.json").read_text())
-    for controller in ("v1", "v31"):
+    for controller in ("v1",):
         for benchmark in ("runbugrun", "humanevalpack"):
             output = ROOT / f"PT-base-{controller}-{benchmark}.jsonl"
             if output.with_suffix(".summary.json").exists():

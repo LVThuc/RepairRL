@@ -52,7 +52,7 @@ def main():
         if digest(path) != sha:
             raise ValueError(f"Frozen source changed: {path}")
     label = "M2-hard" if a.family == "dpo" else "M3-long"
-    for controller in ("v1", "v31"):
+    for controller in ("v1",):
         for benchmark in ("runbugrun", "humanevalpack"):
             path = out / f"{label}-{controller}-{benchmark}.jsonl"
             if path.with_suffix(".summary.json").exists():

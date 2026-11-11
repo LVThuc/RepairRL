@@ -26,7 +26,7 @@ def main():
         if old['selected'] != selected:
             raise ValueError('Frozen DPO choice changed')
     atomic_json(dest, record)
-    for controller in ('v1', 'v31'):
+    for controller in ('v1',):
         for benchmark in ('runbugrun', 'humanevalpack'):
             path = out / f'M2-hard-{controller}-{benchmark}.jsonl'
             if path.with_suffix('.summary.json').exists():
