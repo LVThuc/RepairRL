@@ -165,7 +165,7 @@ The current **DPO-hard** work replaces unchanged-bug rejections with actual M1
 repair attempts. Four candidates are generated per training row. Retained
 negatives must parse, finish normally, fail output comparison and differ from
 the original bug/gold AST. Gold is reverified. Same-prompt IDs, seeds and grades
-are recorded. The bank covers the full 2,000-row source, without a 300-pair cap.
+are recorded. The source pool has 2,000 rows. Collection is now scheduled to stop after 1,000 processed source examples, preserving the verified bank for three DPO experiments rather than waiting for all 2,000. Pair yield and quality remain measured outcomes, not a guaranteed count.
 Multiple learning-rate/epoch checkpoints are selected using dev repair success.
 
 Implementation: [`training/train_dpo.py`](../../training/train_dpo.py),

@@ -197,8 +197,7 @@ do not claim every zero-variance group has identically zero total gradient.
 [`scripts/round2_fast_rollouts.py`](../../scripts/round2_fast_rollouts.py) samples
 one greedy and three stochastic M1 repairs per training row. It uses FP16 inference,
 eight prompts per group, and batches 24 stochastic sequences. Sampling is T=0.8,
-top-p=0.95, top-k=50, repetition penalty=1.1, up to 768 code tokens. The full source
-set is 2,000 rows; pair count is a measured yield, not a promised 300-example cap.
+top-p=0.95, top-k=50, repetition penalty=1.1, up to 768 code tokens. The full source pool is 2,000 rows. The owner revised collection to 1,000 processed source examples; a supervised cutoff freezes that prefix and preserves any batch overshoot separately. Pair count is a measured yield, not a promised 800 high-quality examples.
 
 Candidates must parse, exit normally, fail at least one output comparison, differ
 from the original bug/gold AST, and pass duplicate checks. Gold is rechecked for
@@ -206,9 +205,8 @@ rows yielding negatives. IDs, seeds, sampler versions, outputs and grades preser
 same-prompt provenance. Early NF4 warmup rollouts are stored separately; the FP16
 bank records its sequential-to-multi-prompt sampler transition.
 
-[`scripts/round2_jobs.py`](../../scripts/round2_jobs.py) queues two three-epoch DPO
-trials after bank completion: LR 3e-6/beta 0.1, and LR 1e-5/beta 0.05 with
-`rpo_alpha=0.2`. It monitors dev repair success every approximately half epoch.
+[`scripts/round2_jobs.py`](../../scripts/round2_jobs.py) queues three three-epoch DPO
+trials after bank completion: LR 3e-6/beta 0.1; LR 1e-5/beta 0.1; and LR 3e-6/beta 0.1 with `rpo_alpha=0.2`. It monitors dev repair success every approximately half epoch.
 FP16 LoRA is attempted; a logged OOM can trigger a fresh NF4 fallback trial. Those
 are queued settings, not completed training outcomes.
 

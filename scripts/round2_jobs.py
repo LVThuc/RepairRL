@@ -52,7 +52,8 @@ def main():
                 time.sleep(20)
             common = ["--kind", "dpo", "--bank", str(bank), "--epochs", "3", "--dev-tasks", "60", "--full-precision"]
             trials.append(trial("dpo-lr3e6", common + ["--learning-rate", "0.000003", "--beta", "0.1"]))
-            trials.append(trial("dpo-lr1e5-rpo", common + ["--learning-rate", "0.00001", "--beta", "0.05", "--rpo-alpha", "0.2"]))
+            trials.append(trial("dpo-lr1e5", common + ["--learning-rate", "0.00001", "--beta", "0.1"]))
+            trials.append(trial("dpo-lr3e6-rpo", common + ["--learning-rate", "0.000003", "--beta", "0.1", "--rpo-alpha", "0.2"]))
             family = "dpo"
         else:
             dense = out / "grpo-dense"

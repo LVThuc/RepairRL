@@ -121,3 +121,7 @@ resume validation was not performed while current experiments occupied the GPUs.
 The new controller had no measured dev success gain. Uncertainty analysis for the
 new full comparison requires its completed traces. These limitations belong in
 the final deck if they remain unresolved.
+
+## Revised collection cutoff
+
+`repairrl-cutoff` is a supervisor-managed controller that waits for 1,000 completed source examples, stops only the rollout service at a committed batch boundary, archives the full pre-cutoff bank, and freezes the first 1,000 records. Up to one batch of extra completed work is preserved separately. It marks the frozen bank completed only after rebuilding its preference pairs and hashes, releasing the existing DPO queue. GRPO remains unchanged. The waiting DPO coordinator was updated to three controlled trials before any DPO optimization started.
