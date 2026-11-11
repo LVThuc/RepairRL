@@ -1,20 +1,20 @@
 {
-  "captured_at_utc": "2026-11-11T06:50:59.669118+00:00",
+  "captured_at_utc": "2026-11-11T07:00:46.439939+00:00",
   "round2": {
     "rollouts-fp16/status.json": {
       "state": "running",
-      "rows_completed": 805,
+      "rows_completed": 861,
       "rows_total": 2000,
-      "pairs": 854,
-      "distinct_problems": 408,
-      "wave_seconds": 7420.217460817017,
+      "pairs": 908,
+      "distinct_problems": 434,
+      "wave_seconds": 8000.528661801014,
       "batch_prompts": 8,
       "peak_allocated_gb": 8.943492608,
       "categories": {
-        "pass": 1221,
-        "runtime_error": 469,
-        "incorrect_output": 1483,
-        "invalid_code": 35,
+        "pass": 1313,
+        "runtime_error": 507,
+        "incorrect_output": 1573,
+        "invalid_code": 39,
         "timeout": 12
       }
     },
@@ -75,13 +75,13 @@
     "dpo-queue.json": {
       "state": "waiting_for_rollouts",
       "pid": 8645,
-      "updated_at": 1794379788.6902323,
+      "updated_at": 1794380388.718474,
       "bank": "results/round2/rollouts-fp16"
     },
     "grpo-followup-queue.json": {
       "state": "waiting_for_grpo_dense",
       "pid": 2610,
-      "updated_at": 1794379791.7670724
+      "updated_at": 1794380371.79548
     }
   },
   "local_agent": {
@@ -167,5 +167,5 @@
       "n": 40
     }
   },
-  "grpo_optimizer_step_observed": 370
+  "grpo_optimizer_step_observed": 400
 }
