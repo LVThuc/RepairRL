@@ -1,0 +1,182 @@
+[
+  {
+    "benchmark": "runbugrun",
+    "reference": "M0 Instruct",
+    "candidate": "M1 SFT",
+    "metric": "pass_at_1",
+    "delta": 0.05,
+    "wins": 27,
+    "losses": 17,
+    "ci95": [
+      -0.015544041450777202,
+      0.11594202898550725
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "runbugrun",
+    "reference": "M0 Instruct",
+    "candidate": "M1 SFT",
+    "metric": "agent_at_3",
+    "delta": 0.1,
+    "wins": 32,
+    "losses": 12,
+    "ci95": [
+      0.038461538461538464,
+      0.16080402010050251
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "runbugrun",
+    "reference": "M1 SFT",
+    "candidate": "DPO-hard s66",
+    "metric": "pass_at_1",
+    "delta": -0.005,
+    "wins": 1,
+    "losses": 2,
+    "ci95": [
+      -0.024752475247524754,
+      0.010101010101010102
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "runbugrun",
+    "reference": "M1 SFT",
+    "candidate": "DPO-hard s66",
+    "metric": "agent_at_3",
+    "delta": -0.02,
+    "wins": 1,
+    "losses": 5,
+    "ci95": [
+      -0.04020100502512563,
+      -0.004830917874396135
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "runbugrun",
+    "reference": "M1 SFT",
+    "candidate": "GRPO s800",
+    "metric": "pass_at_1",
+    "delta": 0.04,
+    "wins": 8,
+    "losses": 0,
+    "ci95": [
+      0.01485148514851485,
+      0.07211538461538461
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "runbugrun",
+    "reference": "M1 SFT",
+    "candidate": "GRPO s800",
+    "metric": "agent_at_3",
+    "delta": 0.025,
+    "wins": 6,
+    "losses": 1,
+    "ci95": [
+      0.0,
+      0.05188679245283019
+    ],
+    "clusters": 144,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M0 Instruct",
+    "candidate": "M1 SFT",
+    "metric": "pass_at_1",
+    "delta": 0.042682926829268296,
+    "wins": 21,
+    "losses": 14,
+    "ci95": [
+      -0.024390243902439025,
+      0.11585365853658537
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M0 Instruct",
+    "candidate": "M1 SFT",
+    "metric": "agent_at_3",
+    "delta": 0.012195121951219513,
+    "wins": 18,
+    "losses": 16,
+    "ci95": [
+      -0.06097560975609756,
+      0.07926829268292683
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M1 SFT",
+    "candidate": "DPO-hard s66",
+    "metric": "pass_at_1",
+    "delta": -0.042682926829268296,
+    "wins": 0,
+    "losses": 7,
+    "ci95": [
+      -0.07926829268292683,
+      -0.012195121951219513
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M1 SFT",
+    "candidate": "DPO-hard s66",
+    "metric": "agent_at_3",
+    "delta": -0.024390243902439025,
+    "wins": 0,
+    "losses": 4,
+    "ci95": [
+      -0.04878048780487805,
+      -0.006097560975609756
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M1 SFT",
+    "candidate": "GRPO s800",
+    "metric": "pass_at_1",
+    "delta": -0.012195121951219513,
+    "wins": 2,
+    "losses": 4,
+    "ci95": [
+      -0.042682926829268296,
+      0.018292682926829267
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  },
+  {
+    "benchmark": "humanevalpack",
+    "reference": "M1 SFT",
+    "candidate": "GRPO s800",
+    "metric": "agent_at_3",
+    "delta": 0.0,
+    "wins": 3,
+    "losses": 3,
+    "ci95": [
+      -0.03048780487804878,
+      0.03048780487804878
+    ],
+    "clusters": 164,
+    "bootstrap_repetitions": 2000
+  }
+]

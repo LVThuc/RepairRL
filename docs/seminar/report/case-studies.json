@@ -1,0 +1,119 @@
+[
+  {
+    "id": "21346",
+    "problem_id": "p00047",
+    "benchmark": "runbugrun",
+    "title": "Cup swap: prevent a double update",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "PT-base": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.6666666666666666,
+        "first_category": "incorrect_output"
+      },
+      "M0 Instruct": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.0,
+        "first_category": "runtime_error"
+      },
+      "M1 SFT": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.3333333333333333,
+        "first_category": "incorrect_output"
+      },
+      "DPO-hard s66": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      },
+      "GRPO s800": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      }
+    }
+  },
+  {
+    "id": "186967",
+    "problem_id": "p02588",
+    "benchmark": "runbugrun",
+    "title": "An unwanted debug print returns after DPO",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "PT-base": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.0,
+        "first_category": "incorrect_output"
+      },
+      "M0 Instruct": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.0,
+        "first_category": "incorrect_output"
+      },
+      "M1 SFT": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      },
+      "DPO-hard s66": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.0,
+        "first_category": "incorrect_output"
+      },
+      "GRPO s800": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      }
+    }
+  },
+  {
+    "id": "Python/24",
+    "problem_id": "Python/24",
+    "benchmark": "humanevalpack",
+    "title": "Largest divisor: formatting and arithmetic",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "PT-base": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "first_fraction": 0.0,
+        "first_category": "invalid_code"
+      },
+      "M0 Instruct": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      },
+      "M1 SFT": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      },
+      "DPO-hard s66": {
+        "pass_at_1": false,
+        "agent_at_3": true,
+        "first_fraction": 0.0,
+        "first_category": "incorrect_output"
+      },
+      "GRPO s800": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "first_fraction": 1.0,
+        "first_category": "pass"
+      }
+    }
+  }
+]
