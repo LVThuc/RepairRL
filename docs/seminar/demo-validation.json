@@ -1,0 +1,100 @@
+{
+  "checks": "Live Gradio HTTP API, all5 models/all3 cases; editor test and repair paths; feedback recovery; Chrome render",
+  "recorded_example_outcomes_reproduced": [
+    {
+      "problem": "Cup swap",
+      "model": "GRPO \u00b7 step 800",
+      "passed": true,
+      "expected_recorded_outcome": true,
+      "matches": true,
+      "seconds": 4.168286656000419,
+      "verdict": "### PASS \u00b7 3/3 tests\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 4.1s"
+    },
+    {
+      "problem": "Remove a debug print",
+      "model": "GRPO \u00b7 step 800",
+      "passed": true,
+      "expected_recorded_outcome": true,
+      "matches": true,
+      "seconds": 10.081069259999822,
+      "verdict": "### PASS \u00b7 10/10 tests\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 10.0s"
+    },
+    {
+      "problem": "Largest proper divisor",
+      "model": "GRPO \u00b7 step 800",
+      "passed": true,
+      "expected_recorded_outcome": true,
+      "matches": true,
+      "seconds": 1.7103990370005704,
+      "verdict": "### PASS \u00b7 1/1 task suite\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 1.6s"
+    },
+    {
+      "problem": "Cup swap",
+      "model": "M1 \u00b7 SFT",
+      "passed": false,
+      "expected_recorded_outcome": false,
+      "matches": true,
+      "seconds": 2.763972910999655,
+      "verdict": "### FAIL \u00b7 1/3 tests\nM1 \u00b7 SFT \u00b7 1 attempt(s) \u00b7 1.6s \u00b7 `incorrect_output`"
+    },
+    {
+      "problem": "Cup swap",
+      "model": "DPO \u00b7 step 66",
+      "passed": true,
+      "expected_recorded_outcome": true,
+      "matches": true,
+      "seconds": 4.617054652999286,
+      "verdict": "### PASS \u00b7 3/3 tests\nDPO \u00b7 step 66 \u00b7 1 attempt(s) \u00b7 3.2s"
+    },
+    {
+      "problem": "Remove a debug print",
+      "model": "DPO \u00b7 step 66",
+      "passed": false,
+      "expected_recorded_outcome": false,
+      "matches": true,
+      "seconds": 10.378921412999262,
+      "verdict": "### FAIL \u00b7 0/10 tests\nDPO \u00b7 step 66 \u00b7 1 attempt(s) \u00b7 10.3s \u00b7 `incorrect_output`"
+    },
+    {
+      "problem": "Largest proper divisor",
+      "model": "M0 \u00b7 Instruct",
+      "passed": true,
+      "expected_recorded_outcome": true,
+      "matches": true,
+      "seconds": 3.7172020930001963,
+      "verdict": "### PASS \u00b7 1/1 task suite\nM0 \u00b7 Instruct \u00b7 1 attempt(s) \u00b7 1.0s"
+    },
+    {
+      "problem": "Largest proper divisor",
+      "model": "Pretrained \u00b7 no instruction tuning",
+      "passed": false,
+      "expected_recorded_outcome": false,
+      "matches": true,
+      "seconds": 4.417163369000264,
+      "verdict": "### FAIL \u00b7 0/1 task suite\nPretrained \u00b7 no instruction tuning \u00b7 1 attempt(s) \u00b7 1.4s \u00b7 `invalid_code`"
+    }
+  ],
+  "feedback_recovery": {
+    "passed": true,
+    "verdict": "### PASS \u00b7 1/1 task suite\nDPO \u00b7 step 66 \u00b7 2 attempt(s) \u00b7 3.0s",
+    "attempts": [
+      {
+        "attempt": 1,
+        "passed": 0,
+        "total": 1,
+        "result": "incorrect_output",
+        "generation_seconds": 1.16,
+        "tokens": 31
+      },
+      {
+        "attempt": 2,
+        "passed": 1,
+        "total": 1,
+        "result": "pass",
+        "generation_seconds": 1.54,
+        "tokens": 40
+      }
+    ]
+  },
+  "external_ssh_forward_tested": false
+}
