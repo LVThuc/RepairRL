@@ -61,5 +61,38 @@
     "summary_path": "results/round2/baselines/M0-v1-humanevalpack.summary.json",
     "summary_sha256": "75a7fe0309df8199fb8a420a751a8edfef22c05a1ca0dcaebf5e83eb0ff78069",
     "status": "completed-evaluation"
+  },
+  {
+    "arm": "M0",
+    "controller": "v31",
+    "benchmark": "runbugrun",
+    "metrics": {
+      "n": 200,
+      "pass@1": 0.29,
+      "agent@3": 0.305,
+      "avg_attempts": 2.405,
+      "validity": 0.9875259875259875,
+      "partial_fraction": 0.27799475299475307,
+      "avg_generation_tokens": 184.51975051975052,
+      "avg_generation_seconds": 3.5831301629543697,
+      "avg_patch_seconds": 3.764389827931873,
+      "tests_run": 2981,
+      "categories": {
+        "pass": 61,
+        "incorrect_output": 181,
+        "runtime_error": 81,
+        "duplicate_patch": 152,
+        "timeout": 1,
+        "invalid_code": 5
+      },
+      "diagnosis_calls": 281,
+      "diagnosis_tokens": 24207,
+      "diagnosis_seconds": 480.97136292502546,
+      "duplicate_generations": 152,
+      "extra_repairs": 3
+    },
+    "summary_path": "results/round2/baselines/M0-v31-runbugrun.summary.json",
+    "summary_sha256": "67edfa58011c9a0863df09a359fd9905f9ac4fbfcfcf7fbc0d229f4a2219afda",
+    "status": "completed-evaluation"
   }
 ]

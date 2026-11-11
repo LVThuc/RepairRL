@@ -169,7 +169,7 @@ SHA256: `0c9a62d398df7310771ace01e5a21ccfe77f05098c79d580c3e526d21fa1d1e9`
 
 ## [scripts/round2_jobs.py](../../../scripts/round2_jobs.py)
 
-SHA256: `8d167661ca7bb3f0dc2fa7d66acdfbe32ac15b14ff2d452d0c473eb3e225b4dc`
+SHA256: `e911bafa0d64ed0f56b0435448a5149949bc6435960180ae4492e20d61167c3f`
 
 - [`main`](../../../scripts/round2_jobs.py#L12) — line 12
 
