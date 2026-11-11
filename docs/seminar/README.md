@@ -1,5 +1,8 @@
 # LLM Post-training in Practice — RepairRL seminar handoff
 
+**Want one document? Read [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md).** It covers
+the complete implemented project, actual settings, measured results and current work.
+
 This is the entrypoint for a roughly 60-minute seminar grounded in the **implemented
 RepairRL project**, rather than its original proposal. The case study is deliberately
 small enough to inspect: a 1.5B Python repair model, paired executable examples,
