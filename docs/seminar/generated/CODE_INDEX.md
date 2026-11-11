@@ -74,10 +74,10 @@ SHA256: `c1de4153bc1483285ab9e32b9f172e9fa1bb41ec522490619d44ffca0e74bc85`
 
 ## [training/resume.py](../../../training/resume.py)
 
-SHA256: `5e3e12903e6453d1de7a6e3546750438c2e270d4463971ae5171e2816ace4b62`
+SHA256: `1f6f328d1f306dbec23fe23027f14b3d842c77cfb81e462a321a57e128c9f848`
 
-- [`prepare`](../../../training/resume.py#L15) — line 15
-- [`main`](../../../training/resume.py#L37) — line 37
+- [`prepare`](../../../training/resume.py#L16) — line 16
+- [`main`](../../../training/resume.py#L54) — line 54
 
 ## [evaluation/runner.py](../../../evaluation/runner.py)
 

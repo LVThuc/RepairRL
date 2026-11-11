@@ -1,0 +1,202 @@
+{
+  "generated_at_utc": "2026-11-11T05:49:32.416369+00:00",
+  "root_label": "results-round2",
+  "files": [
+    {
+      "path": "dpo-queue.json",
+      "bytes": 130,
+      "sha256": "07be1b85c12cac081e98ee45ba1a0fcc7d6b7a6506ef6b6901bf522e0f422494",
+      "stable_during_hash": true
+    },
+    {
+      "path": "frozen-protocol.json",
+      "bytes": 3283,
+      "sha256": "0000237b53eb5c8798dd7cefdad3fc495c7e49133dff177aadfac80d1e5ec0a0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/dev-history.jsonl",
+      "bytes": 611,
+      "sha256": "f22d8c94f9fd1fdaf8249f5efffcb95be47474c13e9c9ce14888761383a35f54",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/dev-ids.json",
+      "bytes": 604,
+      "sha256": "490f6f3787e7da1ee01d4e7826cd79f45062e25bd6158e747f1f0a7c476f908f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/experiment.json",
+      "bytes": 24836,
+      "sha256": "37b9d43af908681dcd5c14eb9d61ca6447a26625d3e9f9d999dac0711bfd0526",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/rewards.jsonl",
+      "bytes": 1743929,
+      "sha256": "754d329b50eebd668003ea91332c5b47b2b32665d20f5a4ee47046c64b8839a3",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/rewards.stats.jsonl",
+      "bytes": 32074,
+      "sha256": "144ba800ed8c828f78290e4215542ea3ed06b69e769e306d43c8e1d23b5060a5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/selection.json",
+      "bytes": 1727,
+      "sha256": "3aa142a24c6c9c56b64f1f695985191fa6a2e0bf340afa7174ef640f6077d561",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/README.md",
+      "bytes": 5209,
+      "sha256": "f10e19151e92d2bedecc70d01e3a0a793180320bfd30b5f8016be58419da6576",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/adapter_config.json",
+      "bytes": 933,
+      "sha256": "118f9dad770515cb744fa285ffcf4bcc778d282922504aa700fae4904a2b9e34",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/adapter_model.safetensors",
+      "bytes": 73911112,
+      "sha256": "3043c260d4cac7089a97faae7e8bd029dfb0962bf99e71937f5201883da7cfc5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/added_tokens.json",
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/chat_template.jinja",
+      "bytes": 2507,
+      "sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/round2-checkpoint.json",
+      "bytes": 25554,
+      "sha256": "a5d8a057cbc78260a4530687bbc60700411940a39d325c1062fccc70de0deb30",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/tokenizer.json",
+      "bytes": 11421896,
+      "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/snapshots/step-0/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/variance-rollouts.jsonl",
+      "bytes": 291921,
+      "sha256": "6e368775427e23619553b2b4ed523511cbbcb9381003d699eb4aaf859439dad6",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/variance.json",
+      "bytes": 5738,
+      "sha256": "3d2ac72d7db83392a215a93f6c157bd620638eba333b8d073df7b55b1565059a",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-followup-queue.json",
+      "bytes": 90,
+      "sha256": "398302b237d0101a62436899e2a4a6dd009bdf3e88eb91aa0580d98288657dbe",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts/manifest.json",
+      "bytes": 401,
+      "sha256": "2e911cdac9fa624f577b972801811fc1d3573620912f0602693a9619098ae01c",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts/pairs.jsonl",
+      "bytes": 2700,
+      "sha256": "18cdfa9b6472e58e667fdf5a43782a4f072750b652df856a8dc8872c32aead1d",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts/rollouts.jsonl",
+      "bytes": 57549,
+      "sha256": "5d4d145d4759fd64066f084028c8bb1b4a8c9bf66654bf13c5118e03ab0bb0fb",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts/status.json",
+      "bytes": 207,
+      "sha256": "8b3dac3b47c9c75fdb7c01f5574356546fbdefeb227112b78959031d21d26ba2",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts-fp16/manifest-initial.json",
+      "bytes": 2448,
+      "sha256": "4bc3564eb7e1fb824306008746b2f98f5793899217c27eb394baf931e161a284",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts-fp16/manifest.json",
+      "bytes": 548,
+      "sha256": "e16a4ba7f829b831f989e3964b37daf0dfd056c686fba2c27a8bc60b31267c0f",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts-fp16/pairs.jsonl",
+      "bytes": 236922,
+      "sha256": "43c49c315fbada805a9392b97493105dedd8a84f191d033fc218de01589ccae4",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts-fp16/rollouts.jsonl",
+      "bytes": 4684815,
+      "sha256": "c8c220df5b064b40a2c29dfbb2276ad14ca8dddf98ad9ce3d7ba2d32d1f608b2",
+      "stable_during_hash": true
+    },
+    {
+      "path": "rollouts-fp16/status.json",
+      "bytes": 346,
+      "sha256": "dae4b1ec24cf71aebb4adceb564cb4de0bd939f88c148cb53a58b65ced98cfab",
+      "stable_during_hash": true
+    }
+  ],
+  "file_count": 31,
+  "total_bytes": 96912559,
+  "checkpoints": [
+    {
+      "path": "grpo-dense/snapshots/step-0",
+      "classification": "inference-only-adapter",
+      "reason": "adapter directory itself lacks optimizer/scheduler/RNG trainer state"
+    }
+  ],
+  "live_files": []
+}

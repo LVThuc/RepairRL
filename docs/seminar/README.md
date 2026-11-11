@@ -60,11 +60,10 @@ Source/documentation: `https://github.com/LVThuc/RepairRL`.
 
 Large artifacts are deliberately excluded from ordinary Git. See
 [`artifacts/manifests/storage-index.json`](../../artifacts/manifests/storage-index.json)
-for the private backup index, part sizes, expected hashes and retrieval locations.
-The local preservation root is `/home/thao/Thuc/RepairRL-preservation/`. The Drive
-folder is [RepairRL preservation](https://drive.google.com/drive/folders/1TAfEYJ8MlFV_SeznrvEywUCiNRMlepnf).
-Access follows the connected owner's existing private permissions; no public
-sharing was enabled. Check the index for upload-completion state before restoring.
+for the local backup index, byte counts, expected hashes and retrieval locations.
+The preservation root is `/home/thao/Thuc/RepairRL-preservation/`. Per the owner's
+instruction, local storage is the authoritative artifact store. Cloud uploads
+were stopped; the abandoned partial upload is not a restoration source.
 
 The inventory distinguishes full trainer states from inference-only adapters.
 Do not destroy the remote instance merely because a final adapter exists. Ensure
@@ -83,8 +82,8 @@ uv pip install --python /tmp/repairrl-docs-env/bin/python matplotlib==3.10.7
 ```
 
 The active refresh watcher updates generated evidence as experiments finish.
-GitHub publication and cloud-archive refresh are separate operations: a new local
-file is not evidence that it has already been pushed or uploaded. Consult document
+GitHub publication and local archive refresh are separate operations: a new local
+file is not evidence that it has already been pushed or included in an archive. Consult document
 10 and the artifact index for the latest verified publication/backup state.
 
 ## Instructions for another AI producing slides

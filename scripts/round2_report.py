@@ -32,12 +32,15 @@ def paired(reference, candidate, key, repetitions=2000):
 def report():
     root = Path("results/round2")
     files = list((root / "baselines").glob("*.summary.json"))
+    files += list((root / "baselines-common-parent").glob("*.summary.json"))
     for family in ("dpo", "grpo"):
         files += list((root / "remote" / (family + "-selected")).glob("M*.summary.json"))
     reports = {}
     for path in files:
         value = json.loads(path.read_text())
         p = value["protocol"]
+        if p["arm"] == "M1" and p["model"] != "checkpoints/M1-merged-round2":
+            continue
         reports[(p["arm"], p["controller"], p["benchmark"])] = (path, value)
     expected = [(arm, controller, benchmark) for arm in ("M0", "M1", "M2-hard", "M3-long")
                 for controller in ("v1", "v31") for benchmark in ("runbugrun", "humanevalpack")]

@@ -1,0 +1,239 @@
+[
+  {
+    "case": 1,
+    "label": "SFT first-attempt rescue",
+    "benchmark": "runbugrun",
+    "id": "25202",
+    "problem_id": "p00096",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "M0": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M1": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "attempts": 1,
+        "categories": [
+          "pass"
+        ]
+      },
+      "M2": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M3": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "attempts": 1,
+        "categories": [
+          "pass"
+        ]
+      }
+    }
+  },
+  {
+    "case": 2,
+    "label": "Feedback-guided recovery",
+    "benchmark": "runbugrun",
+    "id": "284537",
+    "problem_id": "p02707",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "M0": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "runtime_error",
+          "runtime_error",
+          "runtime_error"
+        ]
+      },
+      "M1": {
+        "pass_at_1": false,
+        "agent_at_3": true,
+        "attempts": 2,
+        "categories": [
+          "runtime_error",
+          "pass"
+        ]
+      },
+      "M2": {
+        "pass_at_1": false,
+        "agent_at_3": true,
+        "attempts": 2,
+        "categories": [
+          "runtime_error",
+          "pass"
+        ]
+      },
+      "M3": {
+        "pass_at_1": false,
+        "agent_at_3": true,
+        "attempts": 2,
+        "categories": [
+          "runtime_error",
+          "pass"
+        ]
+      }
+    }
+  },
+  {
+    "case": 3,
+    "label": "SFT success / GRPO regression",
+    "benchmark": "runbugrun",
+    "id": "219946",
+    "problem_id": "p02634",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "M0": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "attempts": 1,
+        "categories": [
+          "pass"
+        ]
+      },
+      "M1": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "attempts": 1,
+        "categories": [
+          "pass"
+        ]
+      },
+      "M2": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M3": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      }
+    }
+  },
+  {
+    "case": 4,
+    "label": "Weak-DPO external-benchmark success",
+    "benchmark": "humanevalpack",
+    "id": "Python/6",
+    "problem_id": "Python/6",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "M0": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M1": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M2": {
+        "pass_at_1": true,
+        "agent_at_3": true,
+        "attempts": 1,
+        "categories": [
+          "pass"
+        ]
+      },
+      "M3": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      }
+    }
+  },
+  {
+    "case": 5,
+    "label": "Persistent failure, including runtime feedback",
+    "benchmark": "runbugrun",
+    "id": "1223353",
+    "problem_id": "p00146",
+    "curated_by_observed_outcome": true,
+    "models": {
+      "M0": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "incorrect_output",
+          "incorrect_output",
+          "incorrect_output"
+        ]
+      },
+      "M1": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "runtime_error",
+          "runtime_error",
+          "runtime_error"
+        ]
+      },
+      "M2": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "runtime_error",
+          "runtime_error",
+          "runtime_error"
+        ]
+      },
+      "M3": {
+        "pass_at_1": false,
+        "agent_at_3": false,
+        "attempts": 3,
+        "categories": [
+          "runtime_error",
+          "runtime_error",
+          "runtime_error"
+        ]
+      }
+    }
+  }
+]

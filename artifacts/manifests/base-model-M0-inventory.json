@@ -1,0 +1,81 @@
+{
+  "generated_at_utc": "2026-11-11T05:42:11.301138+00:00",
+  "root_label": "base-model-M0",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519,
+      "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+      "stable_during_hash": true
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "stable_during_hash": true
+    },
+    {
+      "path": "PROVENANCE.json",
+      "bytes": 149,
+      "sha256": "3d1e9c08d3799968aaae1bae33352b3bb23426585a885e2b8d1292c942b0f279",
+      "stable_during_hash": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 5258,
+      "sha256": "a8504fd3e1247c90e4fe640d84df963237134bf29db02b0de7d502eed6c93c33",
+      "stable_during_hash": true
+    },
+    {
+      "path": "config.json",
+      "bytes": 660,
+      "sha256": "88f9a17863c05fb313515d2ff74b1098e0c35579f99068e32beda00618508ae0",
+      "stable_during_hash": true
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 242,
+      "sha256": "1a628a5775bc69cde01c6749a531150ca4d3189652c618a174f7077923acf3b1",
+      "stable_during_hash": true
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "stable_during_hash": true
+    },
+    {
+      "path": "model.safetensors",
+      "bytes": 3087467144,
+      "sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+      "stable_during_hash": true
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "stable_during_hash": true
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 7305,
+      "sha256": "959e7f1d9a1b7641a6d6ce05ca97b75c7894fcb66cbe5a040406458fb1128ee4",
+      "stable_during_hash": true
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    }
+  ],
+  "file_count": 11,
+  "total_bytes": 3098973937,
+  "checkpoints": [
+    {
+      "path": ".",
+      "classification": "inference-only-merged-model"
+    }
+  ],
+  "live_files": []
+}

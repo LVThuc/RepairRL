@@ -1,3 +1,9 @@
+> **Seminar and preservation handoff:** start at [docs/seminar/README.md](docs/seminar/README.md).
+> It documents actual code, completed measurements, active experiments, reproduction,
+> and inference-only versus resumable artifacts. Large model/data/state files remain
+> in the local preservation store; see [the inventory](artifacts/manifests/storage-index.json).
+> Historical setup notes below can refer to earlier pilot defaults.
+
 # RepairRL
 
 Execution-gated Python repair on Qwen2.5-Coder-1.5B-Instruct. M0 is untouched;
