@@ -26,6 +26,19 @@
         "base-model-M0/"
       ],
       "status": "created"
+    },
+    {
+      "name": "handoff-source-runtime.tar.zst",
+      "path": "/home/thao/Thuc/RepairRL-preservation/archives/handoff-source-runtime.tar.zst",
+      "bytes": 235629756,
+      "sha256": "2103f2a019e18c82b2db44b33c201efc956cb04cd9ce8b35a6fe707ebca4b7d4",
+      "status": "created; zstd integrity test passed",
+      "contains": [
+        "project source and results snapshot",
+        "remote live snapshot",
+        "environment and manifests",
+        "private replay packet"
+      ]
     }
   ],
   "live_remote_mirror": "/home/thao/Thuc/RepairRL-preservation/remote-live/results-round2",

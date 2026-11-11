@@ -73,10 +73,11 @@ No active trainer or model-evaluation process was restarted for that change.
 
 The earlier local baseline coordinator was launched before the exact-parent path
 update. Its output must be checked by recorded `protocol.model`, not assumed from
-the current launcher source. If it used the original local merge for round-2 M1,
-retain those diagnostic results and rerun M1 with `checkpoints/M1-merged-round2`
-before an exact-parent headline comparison. This is a launch-provenance issue;
-do not silently merge incompatible rows.
+the current launcher source. A non-interrupting `round2_parent_baseline` follow-up
+waits for that queue, then evaluates M1 with `checkpoints/M1-merged-round2`.
+The reporter excludes old-parent M1 rows and uses the common-parent supplement.
+Diagnostic runs are retained. This fixes a launch-provenance issue without
+interrupting active model runs or silently merging incompatible rows.
 
 ## How documentation stays current
 
@@ -90,12 +91,13 @@ candidate programs to public docs. Rebuild figures with the isolated docs
 environment when completed-result inputs change. Regenerate the artifact
 inventory after newly completed checkpoints are mirrored.
 
-GitHub publication is a separate authenticated step. The connected GitHub app
-can publish commits now. The machine's existing SSH identity is a different
-account with read-only repository access, so unattended CLI pushes are not
-available unless the owner grants write access or configures a project deploy
-key. Local refresh/retention continues regardless. Never store a token/key in
-the repository to bypass that limitation.
+GitHub publication is a separate authenticated step. Initial commits used the
+connected GitHub app. The owner subsequently added a project-only writable deploy
+key for background publication; its private half is outside the repository.
+`seminar_watch` refreshes local evidence and publishes at meaningful milestones
+after final handoff publication is enabled. Its status/log records whether a
+push actually succeeded. Never commit tokens or private keys. A future machine
+needs its own authorized GitHub authentication, not a copied secret from Git.
 
 ## Practical finalization checklist
 

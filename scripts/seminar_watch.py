@@ -5,7 +5,6 @@ import json
 import os
 from pathlib import Path
 import subprocess
-import sys
 import time
 from scripts.seminar_snapshot import ROOT, snapshot
 from scripts.preserve_project import inventory

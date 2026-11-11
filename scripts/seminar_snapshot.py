@@ -218,6 +218,71 @@ def snapshot():
         steps = re.findall(r"\|\s*(\d+)/2000", text)
         ongoing["grpo_optimizer_step_observed"] = int(steps[-1]) if steps else None
     dump(generated / "LIVE_STATUS.json", ongoing)
+    # Export completed second-round summaries separately; partial coverage is
+    # labelled as such and can never silently replace the original four-arm table.
+    candidates = list((ROOT / "results/round2/baselines").glob("*.summary.json"))
+    candidates += list(
+        (ROOT / "results/round2/baselines-common-parent").glob("*.summary.json")
+    )
+    for family in ["dpo", "grpo"]:
+        candidates += list((remote / (family + "-selected")).glob("M*.summary.json"))
+    final_rows = {}
+    for path in candidates:
+        report = json.loads(path.read_text())
+        protocol = report["protocol"]
+        if (
+            protocol["arm"] == "M1"
+            and protocol["model"] != "checkpoints/M1-merged-round2"
+        ):
+            continue
+        key = (protocol["arm"], protocol["controller"], protocol["benchmark"])
+        final_rows[key] = {
+            "arm": key[0],
+            "controller": key[1],
+            "benchmark": key[2],
+            "metrics": report["metrics"],
+            "summary_path": str(path.relative_to(ROOT)),
+            "summary_sha256": digest(path),
+            "status": "completed-evaluation",
+        }
+    dump(generated / "round2-results.json", list(final_rows.values()))
+    table = [
+        "# Second-round evaluation progress",
+        "",
+        f"Completed summary files: {len(final_rows)}/16.",
+        "",
+        "Separate FP16/768-token protocol. Missing rows remain pending. This is not a complete comparison until all required rows exist.",
+        "",
+        "| Model | Controller | Benchmark | n | pass@1 | agent@3 |",
+        "|---|---|---|---:|---:|---:|",
+    ]
+    for key in sorted(final_rows):
+        row = final_rows[key]
+        m = row["metrics"]
+        table.append(
+            f"| {row['arm']} | {row['controller']} | {row['benchmark']} | {m['n']} | {m['pass@1']:.1%} | {m['agent@3']:.1%} |"
+        )
+    (generated / "ROUND2_RESULTS.md").write_text("\n".join(table) + "\n")
+    dev_history = []
+    for path in remote.glob("*/dev-history.jsonl"):
+        try:
+            records = read_jsonl(path)
+        except ValueError:
+            continue
+        dev_history.extend(
+            {
+                "trial": path.parent.name,
+                "step": r["step"],
+                "epoch": r.get("epoch"),
+                "metrics": r["metrics"],
+            }
+            for r in records
+        )
+    dump(generated / "round2-dev-history.json", dev_history)
+    if (ROOT / "results/round2/FINAL_ROUND2.md").exists():
+        (generated / "FINAL_ROUND2.md").write_bytes(
+            (ROOT / "results/round2/FINAL_ROUND2.md").read_bytes()
+        )
     md = [
         "# Live experiment status",
         "",
