@@ -1,10 +1,10 @@
 # Live experiment status
 
-Snapshot: 2026-11-11T06:05:31.165472+00:00
+Snapshot: 2026-11-11T06:19:36.733120+00:00
 
 This is a point-in-time view, not completed held-out evidence. A running service may be waiting, not optimizing.
 
-Latest GRPO optimizer step observed in mirrored log: 205.
+Latest GRPO optimizer step observed in mirrored log: 250.
 
 ## Remote queues
 
@@ -12,19 +12,19 @@ Latest GRPO optimizer step observed in mirrored log: 205.
 {
   "rollouts-fp16/status.json": {
     "state": "running",
-    "rows_completed": 533,
+    "rows_completed": 605,
     "rows_total": 2000,
-    "pairs": 570,
-    "distinct_problems": 271,
-    "wave_seconds": 4772.746410251013,
+    "pairs": 637,
+    "distinct_problems": 308,
+    "wave_seconds": 5583.22965050902,
     "batch_prompts": 8,
     "peak_allocated_gb": 8.943492608,
     "categories": {
-      "pass": 801,
-      "runtime_error": 335,
-      "incorrect_output": 974,
-      "invalid_code": 17,
-      "timeout": 5
+      "pass": 906,
+      "runtime_error": 375,
+      "incorrect_output": 1106,
+      "invalid_code": 26,
+      "timeout": 7
     }
   },
   "grpo-dense/selection.json": {
@@ -84,13 +84,13 @@ Latest GRPO optimizer step observed in mirrored log: 205.
   "dpo-queue.json": {
     "state": "waiting_for_rollouts",
     "pid": 2608,
-    "updated_at": 1794377091.6322703,
+    "updated_at": 1794377931.6685443,
     "bank": "results/round2/rollouts-fp16"
   },
   "grpo-followup-queue.json": {
     "state": "waiting_for_grpo_dense",
     "pid": 2610,
-    "updated_at": 1794377091.637385
+    "updated_at": 1794377931.676337
   }
 }
 ```
