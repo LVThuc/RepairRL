@@ -1,6 +1,6 @@
 # Live experiment status
 
-Snapshot: 2026-11-11T07:00:46.439939+00:00
+Snapshot: 2026-11-11T07:06:12.435461+00:00
 
 This is a point-in-time view, not completed held-out evidence. A running service may be waiting, not optimizing.
 
@@ -12,17 +12,17 @@ Latest GRPO optimizer step observed in mirrored log: 400.
 {
   "rollouts-fp16/status.json": {
     "state": "running",
-    "rows_completed": 861,
+    "rows_completed": 901,
     "rows_total": 2000,
-    "pairs": 908,
-    "distinct_problems": 434,
-    "wave_seconds": 8000.528661801014,
+    "pairs": 945,
+    "distinct_problems": 449,
+    "wave_seconds": 8376.430757601018,
     "batch_prompts": 8,
     "peak_allocated_gb": 8.943492608,
     "categories": {
-      "pass": 1313,
-      "runtime_error": 507,
-      "incorrect_output": 1573,
+      "pass": 1374,
+      "runtime_error": 529,
+      "incorrect_output": 1650,
       "invalid_code": 39,
       "timeout": 12
     }
@@ -84,13 +84,13 @@ Latest GRPO optimizer step observed in mirrored log: 400.
   "dpo-queue.json": {
     "state": "waiting_for_rollouts",
     "pid": 8645,
-    "updated_at": 1794380388.718474,
+    "updated_at": 1794380728.7343445,
     "bank": "results/round2/rollouts-fp16"
   },
   "grpo-followup-queue.json": {
     "state": "waiting_for_grpo_dense",
     "pid": 2610,
-    "updated_at": 1794380371.79548
+    "updated_at": 1794380731.8139982
   }
 }
 ```
