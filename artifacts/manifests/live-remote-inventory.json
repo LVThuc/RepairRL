@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-11T09:17:48.431398+00:00",
+  "generated_at_utc": "2026-11-11T09:24:45.291885+00:00",
   "root_label": "results-round2",
   "files": [
     {
@@ -604,8 +604,8 @@
     },
     {
       "path": "dpo-lr3e6/selection.json",
-      "bytes": 1717,
-      "sha256": "b5b8dc7e0973eb010c8c8d5c9cf11fe327783a8810ad9953a7b3231366508eee",
+      "bytes": 1795,
+      "sha256": "d005fda651cfa4d501cba71d375570331e3e53c0cc5547f57fe811459d83b567",
       "stable_during_hash": true
     },
     {
@@ -1011,9 +1011,33 @@
       "stable_during_hash": true
     },
     {
-      "path": "dpo-queue.json",
+      "path": "dpo-queue-before-user-stop.json",
       "bytes": 100,
       "sha256": "34dbe7da0ece17a08519e5f28b01de0b71d8c6b6aef6c0623458e093d6518e4c",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-queue.json",
+      "bytes": 389,
+      "sha256": "80f63ff94435450b2603500e15f11d31de37887a9889e528bc2e9c57c8690010",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-selected/M2-hard-v1-runbugrun.jsonl",
+      "bytes": 57876,
+      "sha256": "00a8201c74fe7f3f1cb5033ef13aca0e993c5dbc037880c0ed7750fe31085e59",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-selected/M2-hard-v1-runbugrun.protocol.json",
+      "bytes": 3585,
+      "sha256": "5813c27a1b3571d48a3cbd8aee198d9a7704b3984865265d1ec2a7d40f3f5078",
+      "stable_during_hash": true
+    },
+    {
+      "path": "dpo-selected/selection.json",
+      "bytes": 1119,
+      "sha256": "5c8f998998e46efbb644e71586a3b981980a7535a5693a13639190eb2e824af4",
       "stable_during_hash": true
     },
     {
@@ -1727,7 +1751,7 @@
     {
       "path": "grpo-followup-queue.json",
       "bytes": 89,
-      "sha256": "cd4f1a7390808e6e8d3d18c999ee2c8849949b86c3877661eb40dd0c7e56e32c",
+      "sha256": "6d69ea88ef86b33bfad3c2dce847949fefb4e93e515a149fe729e7a84c381e0c",
       "stable_during_hash": true
     },
     {
@@ -1851,8 +1875,8 @@
       "stable_during_hash": true
     }
   ],
-  "file_count": 308,
-  "total_bytes": 3322000751,
+  "file_count": 312,
+  "total_bytes": 3322063798,
   "checkpoints": [
     {
       "path": "dpo-lr3e6/checkpoint-132",

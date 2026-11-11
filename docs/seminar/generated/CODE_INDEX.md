@@ -175,6 +175,6 @@ SHA256: `e911bafa0d64ed0f56b0435448a5149949bc6435960180ae4492e20d61167c3f`
 
 ## [scripts/round2_finish.py](../../../scripts/round2_finish.py)
 
-SHA256: `1bd58db6972ea9c7c28c3eb4ebd408e12e693b62011494d7612a7b8fce5e5e8b`
+SHA256: `1e03802b469fd32bdea36a6485bbe177fc842f59062f5d95fd5ad5cb76f5ee24`
 
 - [`main`](../../../scripts/round2_finish.py#L12) — line 12
