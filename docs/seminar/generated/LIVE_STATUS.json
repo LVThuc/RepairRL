@@ -1,5 +1,5 @@
 {
-  "captured_at_utc": "2026-11-11T09:24:45.374403+00:00",
+  "captured_at_utc": "2026-11-11T09:28:03.477215+00:00",
   "round2": {
     "rollouts-fp16/status.json": {
       "state": "completed",
@@ -27,21 +27,21 @@
     },
     "grpo-dense/selection.json": {
       "state": "training",
-      "latest_dev_step": 600,
+      "latest_dev_step": 800,
       "selected_dev": {
         "n": 60,
-        "pass@1": 0.36666666666666664,
-        "agent@3": 0.36666666666666664,
+        "pass@1": 0.4166666666666667,
+        "agent@3": 0.4166666666666667,
         "avg_attempts": 1.0,
         "validity": 1.0,
-        "partial_fraction": 0.5716666666666667,
-        "avg_generation_tokens": 160.38333333333333,
-        "avg_generation_seconds": 11.301377837334197,
-        "avg_patch_seconds": 11.515811503833296,
+        "partial_fraction": 0.6266666666666667,
+        "avg_generation_tokens": 160.46666666666667,
+        "avg_generation_seconds": 11.31027095860239,
+        "avg_patch_seconds": 11.53822575023684,
         "tests_run": 543,
         "categories": {
-          "incorrect_output": 32,
-          "pass": 22,
+          "incorrect_output": 29,
+          "pass": 25,
           "runtime_error": 6
         },
         "diagnosis_calls": 0,
@@ -97,7 +97,7 @@
     "grpo-followup-queue.json": {
       "state": "waiting_for_grpo_dense",
       "pid": 2610,
-      "updated_at": 1794389072.225593
+      "updated_at": 1794389252.2347522
     }
   },
   "local_agent": {
@@ -183,5 +183,5 @@
       "n": 40
     }
   },
-  "grpo_optimizer_step_observed": 800
+  "grpo_optimizer_step_observed": 805
 }
