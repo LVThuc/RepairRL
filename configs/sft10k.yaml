@@ -1,0 +1,7 @@
+extends: full-sft.yaml
+train_data: data/prepared/sft10k/train.jsonl
+dev_data: data/prepared/sft10k/dev.jsonl
+tests: data/prepared/sft10k/tests.json
+output_dir: results/round2/sft10k-model
+minimum_training_rows: 10000
+save_steps: 250
