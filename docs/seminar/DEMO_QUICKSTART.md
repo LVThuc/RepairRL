@@ -37,11 +37,11 @@ Default behavior preloads GRPO step800. Use `--no-preload` to load on the first 
 
 ## Interface
 
-1. Select one of three curated held-out problems.
-2. Read the statement and edit the prefilled program in the left code editor.
+1. Select one of six curated held-out problems.
+2. Read the statement and edit the prefilled program in the main code editor.
 3. Choose pretrained, Instruct, SFT, DPO step66 or GRPO step800.
-4. Click **Test current code** to score the edited input, or **Fix bug** for live repair.
-5. The right panel displays the actual generated program and its test verdict.
+4. Click **Test code** to score the edited input, or **Fix bug** for live repair.
+5. The problem and editor occupy the main view. After repair, the **Changed lines** tab highlights additions/removals against the exact submitted code, with old/new line numbers. **Full response** shows the generated output. The test verdict remains separate.
 6. Optional: enable **Retry with test feedback** for at most3 V1 attempts. Default is one attempt so model failures remain visible.
 
 **Reset problem** restores the original buggy program. Editing the code changes what the model receives and what the test button grades. It does not change the trusted problem tests. Generated responses are not replaced with cached/gold fixes. The largest-divisor task has a binary whole-suite verdict; it does not report one independently scored assertion as if it were all assertions.
@@ -78,4 +78,12 @@ Prepared data and model weights are private artifacts, not shipped in Git. The a
 
 Unavailable adapter choices are omitted; uncached public models fail clearly instead of silently downloading or substituting another checkpoint. Candidates execute through the existing local Bubblewrap runner with the same benchmark-specific graders. Hidden inputs, expected outputs and assertion sources are not displayed or passed to the model.
 
-Live input/output traces stay private in `results/demo/events.jsonl`. Integration check summaries are in `results/demo/smoke-results.json` and `feedback-smoke.json`. The checks covered all5 model choices, all3 cases, editor changes, scoring, one-attempt repair and the feedback loop. The page was rendered in headless Chrome. HTTP/API operation was checked locally; access from the other computer depends on that machine's SSH/Tailscale access.
+Live input/output traces stay private in `results/demo/events.jsonl`. Integration check summaries are in `results/demo/smoke-results.json` and `feedback-smoke.json`. The original eight selected combinations covered all5 model choices and the original3 cases. The additional3 cases were tested live with GRPO, and all6 descriptions were checked in the browser. Checks also cover editor changes, scoring, one-attempt repair and the feedback loop. The page was rendered in headless Chrome. HTTP/API operation was checked locally; access from the other computer depends on that machine's SSH/Tailscale access.
+
+## Expanded interface
+
+Six cases are available: Cup swap; Remove a debug print; Largest proper divisor; Run-length decoding (RunBugRun24076); Arrange the cakes (RunBugRun858256); Inclusive number sequence (HumanEvalPackPython/15). The three additional cases passed live with GRPO step800 in one attempt, taking approximately3.2,2.9 and1.3seconds respectively, with selected-test results10/10,10/10 andwhole-suite pass.
+
+The descriptions are readable, curated summaries of the published tasks, rendered as Markdown with KaTeX math. The original task records remain the model-prompt source and trusted-grader source, preserving the existing generation protocol. Public examples are task context, not hidden scoring inputs.
+
+The diff uses deterministic text comparison, adds no inference call, and does not claim to explain why edits were made. Invalid Python output is shown as a failure rather than as a valid patch; unchanged output is identified explicitly. Model-generated text is HTML-escaped before displaying changes. Problem reset restores the original editor and clears the previous response/diff.

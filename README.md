@@ -39,7 +39,7 @@ GRPO step 800 is an **interim checkpoint selected on dev**. Later checkpoints ar
 
 ## Run the live demo
 
-The demo has three prefilled problems, an editable Python editor, five model choices, live test verdicts, and optional feedback retries. Selected success/failure cases are disclosed as curated demonstrations.
+The demo has six prefilled problems, rendered descriptions and math, an editable Python editor, five model choices, a highlighted change view, live test verdicts, and optional feedback retries. Selected success/failure cases are disclosed as curated demonstrations.
 
 On the Linux GPU machine, **after restoring the required data and model artifacts**:
 

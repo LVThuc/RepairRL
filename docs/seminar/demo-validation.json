@@ -96,5 +96,30 @@
       }
     ]
   },
-  "external_ssh_forward_tested": false
+  "external_ssh_forward_tested": false,
+  "additional_live_cases": [
+    {
+      "problem": "Run-length decoding",
+      "verdict": "### PASS \u00b7 10/10 tests\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 3.2s",
+      "has_diff": true
+    },
+    {
+      "problem": "Arrange the cakes",
+      "verdict": "### PASS \u00b7 10/10 tests\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 2.9s",
+      "has_diff": true
+    },
+    {
+      "problem": "Inclusive number sequence",
+      "verdict": "### PASS \u00b7 1/1 task suite\nGRPO \u00b7 step 800 \u00b7 1 attempt(s) \u00b7 1.3s",
+      "has_diff": true
+    }
+  ],
+  "interface": "Six readable problems; editor/diff/response tabs; compact controls; rendered math",
+  "browser_checks": {
+    "six_descriptions_readable_without_raw_math_delimiters": true,
+    "katex_math_rendered": true,
+    "changed_lines_tab_selected_after_fix": true,
+    "highlighted_removed_line_observed": true
+  },
+  "unit_tests_passed": 47
 }
