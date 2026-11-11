@@ -81,6 +81,33 @@
     }
   },
   {
+    "trial": "grpo-dense",
+    "step": 600,
+    "epoch": 0.3,
+    "metrics": {
+      "n": 60,
+      "pass@1": 0.36666666666666664,
+      "agent@3": 0.36666666666666664,
+      "avg_attempts": 1.0,
+      "validity": 1.0,
+      "partial_fraction": 0.5716666666666667,
+      "avg_generation_tokens": 160.55,
+      "avg_generation_seconds": 11.342980103635151,
+      "avg_patch_seconds": 11.562719247300993,
+      "tests_run": 543,
+      "categories": {
+        "incorrect_output": 31,
+        "pass": 22,
+        "runtime_error": 7
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 0
+    }
+  },
+  {
     "trial": "dpo-lr3e6",
     "step": 0,
     "epoch": 0,
@@ -121,6 +148,33 @@
       "avg_generation_tokens": 160.86666666666667,
       "avg_generation_seconds": 11.797690640065412,
       "avg_patch_seconds": 12.020833994477774,
+      "tests_run": 543,
+      "categories": {
+        "incorrect_output": 33,
+        "pass": 21,
+        "runtime_error": 6
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 0
+    }
+  },
+  {
+    "trial": "dpo-lr3e6",
+    "step": 132,
+    "epoch": 0.9943502824858758,
+    "metrics": {
+      "n": 60,
+      "pass@1": 0.35,
+      "agent@3": 0.35,
+      "avg_attempts": 1.0,
+      "validity": 1.0,
+      "partial_fraction": 0.5566666666666666,
+      "avg_generation_tokens": 160.75,
+      "avg_generation_seconds": 11.839224396381663,
+      "avg_patch_seconds": 12.058046896828454,
       "tests_run": 543,
       "categories": {
         "incorrect_output": 33,
