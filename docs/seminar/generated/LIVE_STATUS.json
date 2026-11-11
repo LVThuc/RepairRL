@@ -1,40 +1,40 @@
 {
-  "captured_at_utc": "2026-11-11T06:02:13.535795+00:00",
+  "captured_at_utc": "2026-11-11T06:05:31.165472+00:00",
   "round2": {
     "rollouts-fp16/status.json": {
       "state": "running",
-      "rows_completed": 517,
+      "rows_completed": 533,
       "rows_total": 2000,
-      "pairs": 551,
-      "distinct_problems": 264,
-      "wave_seconds": 4594.01147950202,
+      "pairs": 570,
+      "distinct_problems": 271,
+      "wave_seconds": 4772.746410251013,
       "batch_prompts": 8,
       "peak_allocated_gb": 8.943492608,
       "categories": {
-        "pass": 779,
-        "runtime_error": 330,
-        "incorrect_output": 937,
+        "pass": 801,
+        "runtime_error": 335,
+        "incorrect_output": 974,
         "invalid_code": 17,
         "timeout": 5
       }
     },
     "grpo-dense/selection.json": {
       "state": "training",
-      "latest_dev_step": 0,
+      "latest_dev_step": 200,
       "selected_dev": {
         "n": 60,
-        "pass@1": 0.3333333333333333,
-        "agent@3": 0.3333333333333333,
+        "pass@1": 0.35,
+        "agent@3": 0.35,
         "avg_attempts": 1.0,
         "validity": 1.0,
-        "partial_fraction": 0.5183333333333333,
-        "avg_generation_tokens": 160.63333333333333,
-        "avg_generation_seconds": 11.242273636583317,
-        "avg_patch_seconds": 11.458520036417031,
+        "partial_fraction": 0.535,
+        "avg_generation_tokens": 160.68333333333334,
+        "avg_generation_seconds": 11.276134099150658,
+        "avg_patch_seconds": 11.515792842468121,
         "tests_run": 543,
         "categories": {
-          "incorrect_output": 33,
-          "pass": 20,
+          "incorrect_output": 32,
+          "pass": 21,
           "runtime_error": 7
         },
         "diagnosis_calls": 0,
@@ -65,7 +65,7 @@
         "duplicate_generations": 0,
         "extra_repairs": 0
       },
-      "improved_over_parent": false
+      "improved_over_parent": true
     },
     "grpo-dense/variance.json": {
       "passed": true,
@@ -75,13 +75,13 @@
     "dpo-queue.json": {
       "state": "waiting_for_rollouts",
       "pid": 2608,
-      "updated_at": 1794376931.625193,
+      "updated_at": 1794377091.6322703,
       "bank": "results/round2/rollouts-fp16"
     },
     "grpo-followup-queue.json": {
       "state": "waiting_for_grpo_dense",
       "pid": 2610,
-      "updated_at": 1794376931.6300378
+      "updated_at": 1794377091.637385
     }
   },
   "local_agent": {
@@ -167,5 +167,5 @@
       "n": 40
     }
   },
-  "grpo_optimizer_step_observed": 200
+  "grpo_optimizer_step_observed": 205
 }
