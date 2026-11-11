@@ -1,0 +1,13 @@
+extends: dpo.yaml
+train_data: data/prepared/scale-verified/train.jsonl
+dev_data: data/prepared/scale-verified/dev.jsonl
+tests: data/prepared/scale-verified/tests.json
+model: checkpoints/M1-merged
+output_dir: checkpoints/M2
+minimum_training_rows: 500
+num_train_epochs: 1
+max_steps: -1
+learning_rate: 0.000005
+beta: 0.1
+logging_steps: 5
+save_steps: 25

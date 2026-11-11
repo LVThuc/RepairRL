@@ -1,0 +1,12 @@
+extends: base.yaml
+arm: M3
+model: checkpoints/M1-merged
+output_dir: checkpoints/M3
+learning_rate: 0.000005
+num_generations: 4
+gradient_accumulation_steps: 4
+max_steps: 20
+max_prompt_length: 1536
+max_completion_length: 512
+beta: 0.04
+variance_report: results/variance.json

@@ -1,0 +1,10 @@
+extends: sft.yaml
+train_data: data/prepared/scale-verified/train.jsonl
+dev_data: data/prepared/scale-verified/dev.jsonl
+tests: data/prepared/scale-verified/tests.json
+output_dir: checkpoints/M1
+num_train_epochs: 1
+max_steps: -1
+logging_steps: 5
+save_steps: 50
+minimum_training_rows: 1000

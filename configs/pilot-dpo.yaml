@@ -1,0 +1,4 @@
+extends: dpo.yaml
+model: checkpoints/pilot/M1-merged
+output_dir: checkpoints/pilot/M2
+max_steps: 2

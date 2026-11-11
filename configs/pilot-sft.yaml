@@ -1,0 +1,3 @@
+extends: sft.yaml
+output_dir: checkpoints/pilot/M1
+max_steps: 2

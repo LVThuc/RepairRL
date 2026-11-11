@@ -1,0 +1,15 @@
+extends: grpo.yaml
+train_data: data/prepared/scale-verified/train.jsonl
+dev_data: data/prepared/scale-verified/dev.jsonl
+tests: data/prepared/scale-verified/tests.json
+model: checkpoints/M1-merged
+output_dir: checkpoints/M3
+minimum_training_rows: 1000
+max_steps: 200
+num_generations: 4
+gradient_accumulation_steps: 4
+max_prompt_length: 1536
+max_completion_length: 512
+logging_steps: 5
+save_steps: 25
+variance_report: results/full-grpo-variance.json
