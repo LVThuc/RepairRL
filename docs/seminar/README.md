@@ -1,5 +1,7 @@
 # LLM Post-training in Practice — RepairRL seminar handoff
 
+**Slide figures:** [Eight PNG/SVG figures and combined PDF](figures/README.md).
+
 **Full technical report:** [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md) — implemented data pipeline, training settings, matched V1 results, uncertainty, and three curated cases.
 
 **Want one document? Read [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md).** It covers

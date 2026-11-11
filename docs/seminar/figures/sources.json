@@ -1,0 +1,19 @@
+{
+  "scope": "Completed matched V1 held-out results; dev curves frozen through330/1200; no invented training outcomes",
+  "sources": {
+    "docs/seminar/report/results.json": "31fc333bb678d891b91cd2e16f4837b748e425450e01bfb1240c66bb12751ed9",
+    "docs/seminar/report/case-studies.json": "67eb1a292cbfe73f53b4d300f3c3a52ac2817f75e7aa13d30904f684a37aae9d",
+    "docs/seminar/report/dpo-dev.json": "918cbe636e37ecc601417f1b3bf23f5e9ab316a0645a1ea5f9228cf51e773cfe",
+    "docs/seminar/report/grpo-dev.json": "ac505b360c6e1b32ae4510fe0b29d2ca9ef5560e7e3ae817640d555f833e2b95"
+  },
+  "figures": [
+    "01_overall_pipeline",
+    "02_dataset_filtering_funnel",
+    "03_sft_dpo_grpo_workflow",
+    "04_dpo_dev_progression",
+    "05_grpo_dev_progression",
+    "06_model_pass1_comparison",
+    "07_agent3_comparison",
+    "08_actual_repair_case"
+  ]
+}
