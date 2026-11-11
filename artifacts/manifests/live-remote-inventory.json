@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-11T05:53:51.440155+00:00",
+  "generated_at_utc": "2026-11-11T06:02:13.458845+00:00",
   "root_label": "results-round2",
   "files": [
     {
       "path": "dpo-queue.json",
       "bytes": 130,
-      "sha256": "8abee8f21bcbd38b1dd5053b2569ce50acadccd62b34937b44dbcac909eeb2d2",
+      "sha256": "479773b2be1dd006d95c5de828cc80337216e333dc313ab22a95230eeb2576a4",
       "stable_during_hash": true
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "grpo-followup-queue.json",
-      "bytes": 89,
-      "sha256": "211e1f5e8931cb7ce4a91dc8a9464ecdd1d5f4f79043fd3f57c85221de6de8b4",
+      "bytes": 90,
+      "sha256": "46ace95dac45bf68396332272904fd2afa81cd6763e7552ac84c60440939fa37",
       "stable_during_hash": true
     },
     {
@@ -274,25 +274,25 @@
     },
     {
       "path": "rollouts-fp16/pairs.jsonl",
-      "bytes": 251773,
-      "sha256": "762bc4eabbf97648a2cd00aad9a832a1615de69f4c1b19eedf7c96ff066ef7e0",
+      "bytes": 287329,
+      "sha256": "35adb09f8e15f325e59af136c02bd76d3545143ce861cd5738eb29645d6816c2",
       "stable_during_hash": true
     },
     {
       "path": "rollouts-fp16/rollouts.jsonl",
-      "bytes": 5091940,
-      "sha256": "59b8b599cff7fd1dab9eacb3772e48a61c2f77eda89e59f63042c2ac2c54f8de",
+      "bytes": 5706625,
+      "sha256": "2ab3f5beef34d58dfe2adfb47d8e2450b66115766befc865362074fd0f4f8c89",
       "stable_during_hash": true
     },
     {
       "path": "rollouts-fp16/status.json",
-      "bytes": 347,
-      "sha256": "ac99576a500c88ef97963d0121714a5825be2fa588e695178c1b5b976abba416",
+      "bytes": 346,
+      "sha256": "e65a59276c1a59e3ef5f38afdeb8ce042dc5c03dddd6d9aa36cf54c7c47e4b6b",
       "stable_during_hash": true
     }
   ],
   "file_count": 48,
-  "total_bytes": 335361932,
+  "total_bytes": 336012173,
   "checkpoints": [
     {
       "path": "grpo-dense/checkpoint-200",
