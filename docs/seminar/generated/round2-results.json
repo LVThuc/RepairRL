@@ -122,5 +122,66 @@
     "summary_path": "results/round2/baselines-common-parent/M1-v1-humanevalpack.summary.json",
     "summary_sha256": "a36ba8344a4399068ba46569087dbb71612f32adffd4e7dc2bdc30ed0914a896",
     "status": "completed-evaluation"
+  },
+  {
+    "arm": "M2-hard",
+    "controller": "v1",
+    "benchmark": "runbugrun",
+    "metrics": {
+      "n": 200,
+      "pass@1": 0.335,
+      "agent@3": 0.38,
+      "avg_attempts": 2.29,
+      "validity": 0.9934497816593887,
+      "partial_fraction": 0.45924568517363273,
+      "avg_generation_tokens": 171.6986899563319,
+      "avg_generation_seconds": 12.276180185041442,
+      "avg_patch_seconds": 12.52184108988435,
+      "tests_run": 4221,
+      "categories": {
+        "pass": 76,
+        "incorrect_output": 289,
+        "runtime_error": 90,
+        "invalid_code": 3
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 9
+    },
+    "summary_path": "results/round2/remote/dpo-selected/M2-hard-v1-runbugrun.summary.json",
+    "summary_sha256": "fefa78acb6c8b9dcfcf052bb48e88db88876cd542ed3d2b1cee5a6abe8a772d7",
+    "status": "completed-evaluation"
+  },
+  {
+    "arm": "M2-hard",
+    "controller": "v1",
+    "benchmark": "humanevalpack",
+    "metrics": {
+      "n": 164,
+      "pass@1": 0.573170731707317,
+      "agent@3": 0.6341463414634146,
+      "avg_attempts": 1.7926829268292683,
+      "validity": 1.0,
+      "partial_fraction": 0.35374149659863946,
+      "avg_generation_tokens": 69.18707482993197,
+      "avg_generation_seconds": 4.828789299166663,
+      "avg_patch_seconds": 4.975148975984771,
+      "tests_run": 1358,
+      "categories": {
+        "incorrect_output": 177,
+        "pass": 104,
+        "runtime_error": 13
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 10
+    },
+    "summary_path": "results/round2/remote/dpo-selected/M2-hard-v1-humanevalpack.summary.json",
+    "summary_sha256": "0373910fc75d913ad8e294b6d86506f8663059b6d965c0304e97cfc2dc0c46c0",
+    "status": "completed-evaluation"
   }
 ]
