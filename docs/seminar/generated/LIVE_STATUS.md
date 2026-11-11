@@ -1,31 +1,38 @@
 # Live experiment status
 
-Snapshot: 2026-11-11T07:11:39.591929+00:00
+Snapshot: 2026-11-11T07:22:29.598361+00:00
 
 This is a point-in-time view, not completed held-out evidence. A running service may be waiting, not optimizing.
 
-Latest GRPO optimizer step observed in mirrored log: 401.
+Latest GRPO optimizer step observed in mirrored log: 437.
 
 ## Remote queues
 
 ```json
 {
   "rollouts-fp16/status.json": {
-    "state": "running",
-    "rows_completed": 933,
-    "rows_total": 2000,
-    "pairs": 975,
-    "distinct_problems": 464,
-    "wave_seconds": 8688.481428035011,
+    "state": "completed",
+    "rows_completed": 1000,
+    "rows_total": 1000,
+    "pairs": 1062,
+    "distinct_problems": 503,
+    "wave_seconds": 9360.008119283011,
     "batch_prompts": 8,
     "peak_allocated_gb": 8.943492608,
     "categories": {
-      "pass": 1432,
-      "runtime_error": 543,
-      "incorrect_output": 1706,
-      "invalid_code": 39,
-      "timeout": 12
-    }
+      "pass": 1516,
+      "runtime_error": 573,
+      "incorrect_output": 1857,
+      "invalid_code": 40,
+      "timeout": 13,
+      "output_limit": 1
+    },
+    "original_source_budget": 2000,
+    "cutoff_target": 1000,
+    "pairs_sha256": "f086c4d01d66f6e67ed0e4fdc83e4870bebb634f03cf321a58559da1bc19db92",
+    "rollouts_sha256": "c89c98fce4dcf82836c9918847b445bc22937d4dc4880edb8831d0689edccd8c",
+    "physical_rows_completed": 1005,
+    "overshoot_preserved": 5
   },
   "grpo-dense/selection.json": {
     "state": "training",
@@ -82,15 +89,15 @@ Latest GRPO optimizer step observed in mirrored log: 401.
     "reward_version": "dense"
   },
   "dpo-queue.json": {
-    "state": "waiting_for_rollouts",
+    "state": "training",
     "pid": 8645,
-    "updated_at": 1794381088.7510839,
-    "bank": "results/round2/rollouts-fp16"
+    "updated_at": 1794381708.7807548,
+    "trial": "dpo-lr3e6"
   },
   "grpo-followup-queue.json": {
     "state": "waiting_for_grpo_dense",
     "pid": 2610,
-    "updated_at": 1794381071.8311822
+    "updated_at": 1794381731.8641381
   }
 }
 ```
