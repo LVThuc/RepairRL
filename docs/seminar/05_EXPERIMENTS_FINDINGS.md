@@ -138,3 +138,7 @@ semantic/pretraining contamination; reused benchmarks; original response-cap
 mismatch; merge/requantization differences; controller cost; and uncertain
 generalization beyond competitive-programming repair. Explain weak results as
 observations plus hypotheses, not proven causal diagnoses.
+
+### Interim GRPO step-800 evaluation requested during training
+
+The user requested local held-out evaluation of the currently best dev checkpoint. Step800 was selected before evaluation, using25/60 dev pass@1 (41.7%); the M1 parent was20/60. Its immutable snapshot was copied to `results/round2/grpo-interim/step-800`, with adapter hash and parent verification recorded in `step-800-request.json`. `scripts.round2_grpo_interim` runs the frozen FP16/V1 protocol on RunBugRun200 and HumanEvalPack164 on the local3060. Outputs use a separate `M3-long-interim-step-800` arm and do not replace the later dev-selected final arm. Ongoing remote training and future checkpoint selection must continue using dev only; held-out interim results must not tune training. No result is available at launch.
