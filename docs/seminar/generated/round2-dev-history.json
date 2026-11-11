@@ -52,5 +52,32 @@
       "duplicate_generations": 0,
       "extra_repairs": 0
     }
+  },
+  {
+    "trial": "grpo-dense",
+    "step": 400,
+    "epoch": 0.2,
+    "metrics": {
+      "n": 60,
+      "pass@1": 0.36666666666666664,
+      "agent@3": 0.36666666666666664,
+      "avg_attempts": 1.0,
+      "validity": 1.0,
+      "partial_fraction": 0.5716666666666667,
+      "avg_generation_tokens": 160.38333333333333,
+      "avg_generation_seconds": 11.301377837334197,
+      "avg_patch_seconds": 11.515811503833296,
+      "tests_run": 543,
+      "categories": {
+        "incorrect_output": 32,
+        "pass": 22,
+        "runtime_error": 6
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 0
+    }
   }
 ]
