@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-11T09:16:35.776247+00:00",
+  "generated_at_utc": "2026-11-11T09:17:48.431398+00:00",
   "root_label": "results-round2",
   "files": [
     {
@@ -1353,6 +1353,66 @@
       "stable_during_hash": true
     },
     {
+      "path": "grpo-dense/checkpoint-800/optimizer.pt",
+      "bytes": 148048187,
+      "sha256": "e33e920f28da1d08866bb711814c35ebddaffeb6e87a61be1b8a05a771226c0a",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/rng_state.pth",
+      "bytes": 14645,
+      "sha256": "034c385a2ec4e8fb3e42d30af9f24169cf759428a7c5797bc030f54d8d728f12",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/scaler.pt",
+      "bytes": 1383,
+      "sha256": "6fef122931c86c2d2736773be787da21ac6460d41580735381e953556fb410be",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/scheduler.pt",
+      "bytes": 1465,
+      "sha256": "52832d2dcb94a0e5ef85e12e58983907d21a3f2468b6e767e79b33df4347616b",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/special_tokens_map.json",
+      "bytes": 496,
+      "sha256": "a36726f7fe394c1324021cac4a9ee3ad6c4f6285c0d98721f9b0b95888ec9905",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/tokenizer.json",
+      "bytes": 11422060,
+      "sha256": "63a2951d5edfa5cc0a2346ef872f8c77a2920274cfc3b503b04e3799104dee80",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/tokenizer_config.json",
+      "bytes": 4682,
+      "sha256": "a45f7187fa83d693ecb5c7ab7dc574649d9fb7f1404708b51dbb4afbfc822a22",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/trainer_state.json",
+      "bytes": 156660,
+      "sha256": "0127fa47760019b9731e8b076d1b6185d00b31e33d8fbf172bc86deda11ef200",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/training_args.bin",
+      "bytes": 7185,
+      "sha256": "bf511a6d3ee416c7dcec6c31b618da5d4203ced0cfb0bba3fb0e03c1e2f2bd65",
+      "stable_during_hash": true
+    },
+    {
+      "path": "grpo-dense/checkpoint-800/vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "stable_during_hash": true
+    },
+    {
       "path": "grpo-dense/dev-history.jsonl",
       "bytes": 2413,
       "sha256": "24c41a198a12578530c12a093907e6dca2aa6cdf87217a4e900b791c04a3e3c8",
@@ -1666,8 +1726,8 @@
     },
     {
       "path": "grpo-followup-queue.json",
-      "bytes": 87,
-      "sha256": "da17df19b3a08d6751c456c1138156693836d763b80d7f84922c6070c9298564",
+      "bytes": 89,
+      "sha256": "cd4f1a7390808e6e8d3d18c999ee2c8849949b86c3877661eb40dd0c7e56e32c",
       "stable_during_hash": true
     },
     {
@@ -1791,8 +1851,8 @@
       "stable_during_hash": true
     }
   ],
-  "file_count": 298,
-  "total_bytes": 3159567153,
+  "file_count": 308,
+  "total_bytes": 3322000751,
   "checkpoints": [
     {
       "path": "dpo-lr3e6/checkpoint-132",
@@ -1918,6 +1978,17 @@
       "step": 600,
       "max_steps": 2000,
       "epoch": 0.3,
+      "missing": [],
+      "corrupt_zip": [],
+      "has_amp_scaler": true,
+      "validation": "required files + zip CRC; no pickle execution; no GPU resume performed"
+    },
+    {
+      "path": "grpo-dense/checkpoint-800",
+      "classification": "resumable-trainer-state",
+      "step": 800,
+      "max_steps": 2000,
+      "epoch": 0.4,
       "missing": [],
       "corrupt_zip": [],
       "has_amp_scaler": true,
