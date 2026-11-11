@@ -1,77 +1,32 @@
-# RepairRL evaluation protocol v1
+# Evaluation protocol
 
-No improvement is assumed. This is a standalone Python repair experiment, not a
-Repair-R1 or ReCode reproduction. There are no hard-negative preference pairs.
+## Published comparison
 
-M0 is Qwen/Qwen2.5-Coder-1.5B-Instruct at revision
-`2e1fd397ee46e1388853d2af2c993145b0f1098a`. M1 is an SFT adapter. Merge M1
-once at fp16 from the unquantized base on CPU, then independently load that
-immutable merge for M2 weak-negative DPO and M3 execution-reward GRPO. Both new
-adapters use disabled-adapter M1 as their reference; neither branch starts from
-the other. Merge metadata records the M1 adapter checksum. Quantization/merge
-rounding can slightly change numerical behavior; measure this when comparing.
+- Models: pretrained Qwen2.5-Coder-1.5B; M0 Instruct; M1 repair SFT; DPO-hard step 66; GRPO step 800.
+- Checkpoints are selected on dev. GRPO step 800 is an interim selection; later checkpoints are separate results.
+- RunBugRun: 200 held-out examples from 144 problem groups. Training, dev and test problem IDs are disjoint.
+- HumanEvalPack Python: 164 evaluation-only tasks. Never used for training or checkpoint selection.
+- FP16 inference, fixed repair prompt, seed 42, greedy decoding, context 4,096, maximum 768 generated code tokens.
+- V1: at most three sequential attempts, stopping on success; retries receive the current candidate and sanitized test-count/category feedback.
 
-Freeze data manifests, test suites, prompt version, tokenizer, model revision,
-seed, greedy decoding, 512 new tokens, 2048 total tokens, 3-second per-call/test
-sandbox timeout and three total attempts before comparing arms. Record the
-resolved model revision, manifest/test SHA256, task IDs and all raw generations.
-Overlength prompts fail explicitly rather than silently truncating the problem.
-`evaluation.compare` rejects mismatched protocols or task sets. Report shorter
-pilot subsets separately from full benchmark runs.
+## Metrics
 
-The prompt contains specification and original buggy code; retries contain the
-latest candidate and a count/category-only test summary. No hidden expected
-outputs, inputs, test sources or gold solution enter model prompts. Parse one
-full Python program (optionally one surrounding code fence); explanations and
-invalid syntax fail. Return the latest candidate after three failed attempts.
+**Pass@1:** fraction of tasks passing all selected tests on the first attempt.
 
-RunBugRun: select active Python records from predefined splits 0/1/2, then
-construct NEW deterministic 80/10/10 problem-group splits. Audit original split
-overlap. The pilot samples one variant per problem before taking later variants.
-Gold must pass every selected active test and the bug must fail at least one.
-Require two tests; cap at ten deterministic test IDs. Metrics refer to these
-frozen selected tests, not every test in the full database. Deduplicate both
-code variants with AST hashes and token 5-gram Jaccard >=0.9. This does not prove
-absence of semantic duplicates or cross-benchmark problem overlap. Inspect
-statements for language/completeness; token limits exclude oversized records.
+**Agent@3:** fraction solved within up to three feedback-guided attempts. This differs from independent-sample pass@3.
 
-The output matcher ports RunBugRun's per-line numeric-token comparison and
-problem-specific absolute tolerances from upstream commit
-`374251a9d65410f37e1136049cb7ff5dcca3d0ae`. Nonzero exit, timeout, or output cap
-always fails even if a prefix matches. This exit-status policy is stricter than
-upstream's output-first status precedence. Both gold and candidates use it.
+**Partial test fraction:** report per-task means at attempt 1 or the best observed attempt when comparing models. The existing `partial_fraction` summary field instead averages over all generated attempts, which weights models differently when their retry counts differ. HumanEvalPack is recorded as a binary whole-task outcome, not an individual-assertion fraction.
 
-HumanEvalPack: evaluation only, all 164 Python tasks. Use published declaration
-plus buggy body as input and full function code as output. Published assertions
-and helper definitions stay in the trusted grader. Candidate function calls use
-JSON-only argument/result transport into fresh Bubblewrap processes. No pickle
-or generated code runs in the host grader. Stateless RPC differs from a single
-shared Python process; all 164 gold solutions must pass before scoring. No
-partial assertion pass fraction is claimed: each assertion suite is one unit.
-Each candidate suite has a 30-second aggregate budget checked between calls
-(plus at most one in-flight per-call timeout). Function inputs necessarily reach the candidate, while assertion source and
-expected values remain outside. Potential pretraining contamination remains.
+**Validity:** parseable candidate code. Validity does not imply execution correctness.
 
-Headline metrics are first-attempt all-pass success and sequential feedback-guided
-agent@3, with early stopping. Agent@3 is NOT independent-sampling pass@3. Also
-record validity (syntactically parseable code), failure categories, generation
-tokens, generation/patch time, attempts, and tests run. Partial fractions are
-only diagnostic. Report RunBugRun and HumanEvalPack separately. Do not choose
-hyperparameters using HumanEvalPack. Disclose cherry-picked demonstration cases.
+Store raw generations, traces, model identity, data/test hashes, decoding settings, runtime, latency and attempts. Use matched task IDs for paired comparisons. RunBugRun uncertainty estimates cluster by problem ID.
 
-Reward: zero for invalid programs, timeout, output cap, or runtime failure;
-otherwise passed/total plus 0.05 for all-pass. This is an outcome reward, not a
-learned process reward. The variance gate requires >=30 distinct training
-problems with four/eight samples each, and >=20% of groups with nonzero reward
-variance. This operational threshold is a project choice requiring inspection,
-not evidence of learning. GRPO defaults to 20 pilot optimizer steps; scaling
-requires successful save/reload, evaluator and memory/time checks.
+## Execution
 
-Candidate execution requires Linux user/network/PID namespaces, Bubblewrap,
-and /usr/bin/python3. It drops capabilities, UID/GID 65534, disallows child
-processes and nested user namespaces, limits address space to 512 MB, CPU and
-wall time, output, file size and open files, and bounds temporary tmpfs to 16 MB.
-Only /usr, minimal /dev, isolated /proc and read-only candidate source are
-mounted. The sandbox environment is cleared; tests, model files, home, GPU,
-workspace and host secrets are not mounted. Never add an unsandboxed fallback.
-This is kernel isolation, not a formally verified hostile-code security boundary.
+Candidate code runs outside the training process. RunBugRun uses stdin/stdout and benchmark-style numeric/whitespace matching. HumanEvalPack uses isolated function-call RPC; trusted assertions stay in the grader. Timeout: 3 seconds per execution; RAM: 512 MB; output: 65,536 bytes.
+
+The main completed comparison was graded with the local Bubblewrap runner and candidate Python 3.14.4. A later server migration preserved that runtime but changed isolation to chroot/seccomp. Runs crossing migration require their execution ledger and validation metadata; do not claim identical backend timing. See [execution notes](docs/seminar/SERVER_GRADER_MIGRATION.md).
+
+## Reporting limits
+
+Keep the original NF4/512-token results separate from this FP16/768-token protocol. Report curated demonstrations as curated. Do not use interim held-out inspection to tune continuing training. Account for limited selected test suites, single-seed training, possible pretraining contamination and unresolved semantic overlap.

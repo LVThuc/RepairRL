@@ -72,7 +72,6 @@ def main():
     (ROOT / "results.json").write_text(json.dumps(exported, indent=2))
     (ROOT / "paired-comparisons.json").write_text(json.dumps(comparisons, indent=2))
     cases = []
-    private = []
     for benchmark, rid, title in [
         ("runbugrun", "21346", "Cup swap: prevent a double update"),
         ("runbugrun", "186967", "An unwanted debug print returns after DPO"),
@@ -105,34 +104,7 @@ def main():
             },
         }
         cases.append(public)
-        # Owner-only replay data excludes hidden tests; never add this file to Git.
-        clean = {
-            n: {
-                "attempts": [
-                    {
-                        "code": t["generation"]["text"],
-                        "fraction": t["grade"]["fraction"],
-                        "category": t["grade"]["category"],
-                    }
-                    for t in r["trace"]
-                ]
-            }
-            for n, r in rows.items()
-        }
-        private.append(
-            {
-                "id": rid,
-                "benchmark": benchmark,
-                "statement": task["statement"],
-                "buggy_code": task["buggy_code"],
-                "fixed_code": task["fixed_code"],
-                "models": clean,
-            }
-        )
     (ROOT / "case-studies.json").write_text(json.dumps(cases, indent=2))
-    Path(
-        "/home/thao/Thuc/RepairRL-preservation/report-case-studies-private.json"
-    ).write_text(json.dumps(private, indent=2))
     history = read_jsonl("results/round2/remote/grpo-dense/dev-history.jsonl")
     (ROOT / "grpo-dev.json").write_text(
         json.dumps(

@@ -342,7 +342,7 @@ This report snapshot includes completed dev evaluations through 1200. Later dev 
 
 ## 9. Three curated case studies
 
-All cases are selected using observed results for illustration, not sampled to estimate model quality. Source IDs and public outcome metadata are in [report/case-studies.json](report/case-studies.json). Full owner-only replay data, without hidden tests, is preserved at `/home/thao/Thuc/RepairRL-preservation/report-case-studies-private.json`. Raw benchmark programs/test suites are not bundled publicly. No demo input/output below comes from hidden scoring cases.
+All cases are selected using observed results for illustration, not sampled to estimate model quality. Source IDs and public outcome metadata are in [report/case-studies.json](report/case-studies.json). Full owner-only replay data, without hidden tests, is available separately from the public repository. Raw benchmark programs/test suites are not bundled publicly. No demo input/output below comes from hidden scoring cases.
 
 Status cells below are **first attempt / within3**.
 
@@ -405,7 +405,7 @@ DPO's first candidate uses subtraction rather than a divisibility test and fails
 
 [ReCode, ACL2026](https://aclanthology.org/2026.acl-long.2031/) is the research connection for using execution-aware signals in repair post-training. Its contribution includes a learned reasoning-process reward and correctness-gated use of that signal.
 
-RepairRL implements an outcome reward from tests. It does **not** implement the paper's learned RPR scorer, contrastive reasoning preference learning, or full consistency-gated GRPO method. Our separate diagnosis agent is not a learned process-reward model. The relationship is conceptual inspiration, not reproduction. See the source-audited [ReCode connection](06_RECODE_CONNECTION.md) for the paper-specific details and limitations.
+RepairRL implements an outcome reward from tests. It does **not** implement the paper's learned RPR scorer, contrastive reasoning preference learning, or full consistency-gated GRPO method. Our separate diagnosis agent is not a learned process-reward model. The relationship is conceptual inspiration, not reproduction. See the [ReCode connection](06_RECODE_CONNECTION.md) for the paper-specific details and limitations.
 
 ## 12. Threats to validity and technical lessons
 

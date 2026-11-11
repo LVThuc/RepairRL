@@ -1,5 +1,6 @@
 """Bundle the exact candidate interpreter and its shared-library dependencies."""
 
+import argparse
 import json
 from pathlib import Path
 import re
@@ -9,8 +10,12 @@ from repairrl.common import digest
 
 
 def main():
-    root = Path("/home/thao/Thuc/RepairRL-preservation/server-grader-migration")
-    root.mkdir(exist_ok=True)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--output", type=Path, default=Path("artifacts/private/grader-runtime")
+    )
+    root = parser.parse_args().output
+    root.mkdir(parents=True, exist_ok=True)
     binary = Path("/usr/bin/python3").resolve()
     runtime = Path("/usr/lib/python3.14")
     files = {binary} | {

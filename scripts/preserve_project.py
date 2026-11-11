@@ -5,8 +5,6 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import time
 import zipfile
 
 
@@ -139,42 +137,15 @@ def inventory(root, output):
     )
 
 
-def remote_sync(destination, once=False):
-    destination = Path(destination)
-    destination.mkdir(parents=True, exist_ok=True)
-    while True:
-        # Never --delete: retain checkpoints after trainer save_total_limit prunes
-        # the corresponding remote directory. In-progress files are marked by inventory.
-        command = [
-            "rsync",
-            "-a",
-            "--partial",
-            "-e",
-            "ssh -p 40401 -o BatchMode=yes -o ConnectTimeout=12",
-            "root@125.240.239.50:/workspace/RepairRL/results/round2/",
-            str(destination) + "/",
-        ]
-        result = subprocess.run(command)
-        print("remote full-state sync", result.returncode, time.time(), flush=True)
-        if once:
-            return
-        time.sleep(45)
-
-
 def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest="command", required=True)
     inv = sub.add_parser("inventory")
     inv.add_argument("root")
     inv.add_argument("output")
-    sync = sub.add_parser("remote-sync")
-    sync.add_argument("destination")
-    sync.add_argument("--once", action="store_true")
     args = p.parse_args()
     if args.command == "inventory":
         inventory(args.root, args.output)
-    else:
-        remote_sync(args.destination, args.once)
 
 
 if __name__ == "__main__":

@@ -10,13 +10,13 @@ On the other computer, establish SSH access to the3060 machine, then run:
 ssh -N -L 7860:127.0.0.1:7860 USER@3060_HOST
 ```
 
-Keep that terminal open and visit **http://localhost:7860** in the browser on the other computer. `3060_HOST` is the SSH-accessible3060 machine, not the rental server. If using its Tailscale address, the browser computer must be connected to the same tailnet and permitted by its SSH policy. Ordinary LAN SSH requires its own running SSH service. The existing machine has Tailscale SSH enabled; this work did not change its SSH policy or install a new network-facing SSH daemon. A same-host connection to its own Tailscale address is not an external-client verification.
+Keep that terminal open and visit **http://localhost:7860** in the browser on the other computer. `3060_HOST` is the SSH-accessible3060 machine, not the rental server. If using its Tailscale address, the browser computer must be connected to the same tailnet and permitted by its SSH policy. Ordinary LAN SSH requires its own running SSH service. Configure and verify SSH access from the browser computer before presenting.
 
 If local port7860 is occupied on the browser computer, use `-L 7861:127.0.0.1:7860` and open http://localhost:7861.
 
 ## Start/stop on the GPU computer
 
-The current computer has a user service already started:
+On the original configured workstation, a user service was installed:
 
 ```bash
 systemctl --user status repairrl-demo
@@ -25,7 +25,7 @@ journalctl --user -u repairrl-demo -f
 systemctl --user stop repairrl-demo
 ```
 
-The service is not enabled at boot. After a reboot, start it with `systemctl --user start repairrl-demo`. This computer needs to stay on while presenting.
+That workstation service is not enabled at boot. It is not installed automatically by cloning this repository. On that workstation, start it with `systemctl --user start repairrl-demo`. This computer needs to stay on while presenting.
 
 Portable manual launch from the project root:
 

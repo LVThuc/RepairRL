@@ -1,41 +1,38 @@
-# Published data only
+# Data preparation
 
-RunBugRun v2: https://github.com/giganticode/run_bug_run/releases/tag/v2
+Training data comes from [RunBugRun v2](https://github.com/giganticode/run_bug_run/releases/tag/v2). [HumanEvalPack](https://huggingface.co/datasets/bigcode/humanevalpack) Python is evaluation-only. Raw programs and scoring tests are not redistributed in this repository.
 
-The release asset is 120,501,798 bytes. Its decompressed SQLite SQL dump is
-2,099,563,917 bytes. Downloads, SQL, SQLite, extracted source examples and prepared
-manifests are ignored by Git. Inspect upstream licensing/provenance before
-redistributing examples; this repository does not republish dataset content.
+## Published split
 
-`python -m scripts.fetch_runbugrun` records the official URL, byte size and a
-local SHA256 (the release currently supplies no digest). Decompress with
-`lrunzip -p 2 -o data/raw/runbugrun.sql data/raw/runbugrun.sql.lrz`, then use
-`python -m scripts.restore_db data/raw/runbugrun.sql data/raw/runbugrun.db`.
-A standard-library streaming restore avoids requiring the sqlite3 CLI.
+[runbugrun-splits.json](manifests/runbugrun-splits.json) records exact source row IDs, problem IDs, seed and prepared-file hashes:
 
-Extraction audits schema, enums and original problem/split overlap, selecting
-active Python (5), source splits 0/1/2 and active tests only. `filter_and_split`
-executes both versions, deduplicates, groups by problem, and writes hashed gates.
-No fake bugs or generated preference candidates are used. Tiny snippets in unit
-tests are harness fixtures and are never used as experimental training data.
+| Split | Examples | Problem groups |
+|---|---:|---:|
+| Train | 2,000 | 1,219 |
+| Dev | 200 | 147 |
+| Test | 200 | 144 |
 
-HumanEvalPack is evaluation only. `python -m evaluation.humanevalpack_adapter
---sanity` downloads its pinned revision, prepares 164 cases and checks gold and
-buggy programs. Never mix `data/external` into training or dev selection.
+All problem groups are disjoint. Frequent checkpoint screens use 60 distinct dev problems. HumanEvalPack has 164 evaluation-only tasks.
 
-Prepared files contain source and tests for the trusted grader, not candidate
-mounts. Each training arm verifies dataset hashes against `gate.json` before
-loading. Scaling extraction requires a new directory and a fresh verification
-run; never overwrite manifests during a multi-arm comparison.
+## Preparation procedure
 
-`python -m data.audit_overlap` checks both source-code variants in the training
-manifest against the external benchmark for AST-exact and token-near matches.
-Re-run it after scaling; a zero-match audit is not proof of semantic disjointness.
+The source database is an lrzip-compressed SQL dump. Restore it into a fresh SQLite file, extract Python examples, filter prompt/response length, verify execution, then deduplicate and split by problem ID.
 
-For larger runs, `data.filter_context` filters the published candidates using
-Qwen's pinned tokenizer before execution. `filter_and_split --workers 4`
-verifies independent pairs concurrently but consumes results in source order.
-`--preserve-splits data/prepared/verified` locks existing pilot problem IDs to
-their original partitions. Optional `--max-train`, `--max-dev`, and `--max-test`
-cap rows only after group splitting; report actual retained counts separately
-from total verification acceptance counts.
+```bash
+python -m scripts.fetch_runbugrun
+lrunzip -o data/raw/runbugrun.sql data/raw/runbugrun.sql.lrz
+python -m scripts.restore_db data/raw/runbugrun.sql data/raw/runbugrun.db
+python -m data.extract_runbugrun --db data/raw/runbugrun.db --output data/prepared/scale-source --limit 4000
+python -m data.filter_context --input data/prepared/scale-source --output data/prepared/scale-context
+python -m data.filter_and_split --input data/prepared/scale-context --output data/prepared/scale-verified --workers 4 --max-train 2000 --max-dev 200 --max-test 200
+```
+
+These commands describe the preparation pipeline. The published experiment also preserved earlier pilot problem assignments: reproducing its exact membership requires the recorded split IDs/frozen manifests, rather than assuming a newly sampled split is identical. Label new preparations as new experiments and compare hashes before training.
+
+The recorded funnel is 4,000 extracted → 3,913 context/statement-filtered → 3,044 verified/deduplicated → 2,000 train, 200 dev, 200 test, 644 accepted but unused.
+
+Checks include gold passing all selected tests, buggy code failing at least one, exact AST deduplication and token five-gram Jaccard similarity >=0.9. Each RunBugRun task has 2–10 selected active tests. The description/language filter is heuristic. Source token counts differ from Qwen tokenizer counts.
+
+Use `data.audit_overlap` against HumanEvalPack after preparation. This checks code similarity; semantic overlap and foundation-model pretraining contamination remain unresolved. Do not use HumanEvalPack examples for training or selection.
+
+The trainer requires a successful `gate.json`, matching hashes and verified, problem-disjoint split manifests. See the [technical report](../docs/seminar/TECHNICAL_REPORT.md) for source revisions, counts, exclusions and limitations.

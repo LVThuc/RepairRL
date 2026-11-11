@@ -1,6 +1,0 @@
-extends: grpo.yaml
-model: checkpoints/pilot/M1-merged
-output_dir: checkpoints/pilot/M3
-variance_report: results/pilot-variance.json
-max_steps: 20
-max_completion_length: 256
