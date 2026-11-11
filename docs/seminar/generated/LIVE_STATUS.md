@@ -1,6 +1,6 @@
 # Live experiment status
 
-Snapshot: 2026-11-11T09:17:48.508884+00:00
+Snapshot: 2026-11-11T09:21:05.063599+00:00
 
 This is a point-in-time view, not completed held-out evidence. A running service may be waiting, not optimizing.
 
@@ -89,15 +89,24 @@ Latest GRPO optimizer step observed in mirrored log: 800.
     "reward_version": "dense"
   },
   "dpo-queue.json": {
-    "state": "training",
-    "pid": 8645,
-    "updated_at": 1794381708.7807548,
-    "trial": "dpo-lr3e6"
+    "state": "stopped_by_user",
+    "updated_at": 1794388803.944502,
+    "previous": {
+      "state": "training",
+      "pid": 8645,
+      "updated_at": 1794381708.7807548,
+      "trial": "dpo-lr3e6"
+    },
+    "cancelled_trials": [
+      "dpo-lr1e5",
+      "dpo-lr3e6-rpo"
+    ],
+    "note": "Late dev degradation; evaluate best dev-screened step 66. Objective mismatch is a hypothesis, not established cause."
   },
   "grpo-followup-queue.json": {
     "state": "waiting_for_grpo_dense",
     "pid": 2610,
-    "updated_at": 1794388612.2023854
+    "updated_at": 1794388832.2136788
   }
 }
 ```
