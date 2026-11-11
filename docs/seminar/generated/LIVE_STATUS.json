@@ -1,5 +1,5 @@
 {
-  "captured_at_utc": "2026-11-11T08:58:07.871259+00:00",
+  "captured_at_utc": "2026-11-11T09:16:35.844060+00:00",
   "round2": {
     "rollouts-fp16/status.json": {
       "state": "completed",
@@ -88,7 +88,7 @@
     "grpo-followup-queue.json": {
       "state": "waiting_for_grpo_dense",
       "pid": 2610,
-      "updated_at": 1794387432.146264
+      "updated_at": 1794388552.199382
     }
   },
   "local_agent": {
@@ -174,5 +174,5 @@
       "n": 40
     }
   },
-  "grpo_optimizer_step_observed": 743
+  "grpo_optimizer_step_observed": 800
 }

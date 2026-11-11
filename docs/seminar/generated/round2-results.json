@@ -188,5 +188,69 @@
     "summary_path": "results/round2/baselines-common-parent/M1-v1-humanevalpack.summary.json",
     "summary_sha256": "a36ba8344a4399068ba46569087dbb71612f32adffd4e7dc2bdc30ed0914a896",
     "status": "completed-evaluation"
+  },
+  {
+    "arm": "M1",
+    "controller": "v31",
+    "benchmark": "runbugrun",
+    "metrics": {
+      "n": 200,
+      "pass@1": 0.34,
+      "agent@3": 0.38,
+      "avg_attempts": 2.295,
+      "validity": 0.9934640522875817,
+      "partial_fraction": 0.2880061901303732,
+      "avg_generation_tokens": 170.91721132897604,
+      "avg_generation_seconds": 3.1114241182981646,
+      "avg_patch_seconds": 3.2813526118731353,
+      "tests_run": 2314,
+      "categories": {
+        "pass": 76,
+        "incorrect_output": 132,
+        "duplicate_patch": 208,
+        "runtime_error": 41,
+        "timeout": 1,
+        "invalid_code": 1
+      },
+      "diagnosis_calls": 259,
+      "diagnosis_tokens": 19911,
+      "diagnosis_seconds": 374.7114231558953,
+      "duplicate_generations": 208,
+      "extra_repairs": 8
+    },
+    "summary_path": "results/round2/baselines-common-parent/M1-v31-runbugrun.summary.json",
+    "summary_sha256": "fa62b4ff1475ffdd80c9bcd1de705b225f58c757d7474942b5c9478860dfdba1",
+    "status": "completed-evaluation"
+  },
+  {
+    "arm": "M1",
+    "controller": "v31",
+    "benchmark": "humanevalpack",
+    "metrics": {
+      "n": 164,
+      "pass@1": 0.6158536585365854,
+      "agent@3": 0.6585365853658537,
+      "avg_attempts": 1.7317073170731707,
+      "validity": 1.0,
+      "partial_fraction": 0.38028169014084506,
+      "avg_generation_tokens": 69.78873239436619,
+      "avg_generation_seconds": 1.2808475772637369,
+      "avg_patch_seconds": 1.4079516816412982,
+      "tests_run": 1166,
+      "categories": {
+        "incorrect_output": 77,
+        "duplicate_patch": 91,
+        "pass": 108,
+        "runtime_error": 8
+      },
+      "diagnosis_calls": 120,
+      "diagnosis_tokens": 8948,
+      "diagnosis_seconds": 163.5377204669494,
+      "duplicate_generations": 91,
+      "extra_repairs": 7
+    },
+    "summary_path": "results/round2/baselines-common-parent/M1-v31-humanevalpack.summary.json",
+    "summary_sha256": "eb48a5296ef0a56d3ef582c78ea300936aeeda159d4a19a7fb20de73c3831cc1",
+    "status": "completed-evaluation"
   }
 ]

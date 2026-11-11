@@ -243,5 +243,33 @@
       "duplicate_generations": 0,
       "extra_repairs": 0
     }
+  },
+  {
+    "trial": "dpo-lr3e6",
+    "step": 330,
+    "epoch": 2.48210922787194,
+    "metrics": {
+      "n": 60,
+      "pass@1": 0.31666666666666665,
+      "agent@3": 0.31666666666666665,
+      "avg_attempts": 1.0,
+      "validity": 0.9833333333333333,
+      "partial_fraction": 0.5399999999999999,
+      "avg_generation_tokens": 165.41666666666666,
+      "avg_generation_seconds": 12.200250926418812,
+      "avg_patch_seconds": 12.416580842247884,
+      "tests_run": 533,
+      "categories": {
+        "incorrect_output": 33,
+        "pass": 19,
+        "runtime_error": 7,
+        "invalid_code": 1
+      },
+      "diagnosis_calls": 0,
+      "diagnosis_tokens": 0,
+      "diagnosis_seconds": 0,
+      "duplicate_generations": 0,
+      "extra_repairs": 0
+    }
   }
 ]
