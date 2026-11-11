@@ -20,7 +20,7 @@ def main():
             healthy = response.returncode == 0 and json.loads(response.stdout).get("ready")
         except Exception:
             healthy = False
-        if not healthy and (tunnel is None or tunnel.poll() is not None):
+        if not healthy and not (out / "remote-grader.json").exists() and (tunnel is None or tunnel.poll() is not None):
             tunnel = subprocess.Popen(SSH[:-1] + ["ConnectTimeout=12", "-N", "-T", "-o", "ExitOnForwardFailure=yes",
                 "-o", "ServerAliveInterval=15", "-o", "ServerAliveCountMax=3", "-R",
                 "127.0.0.1:18591:127.0.0.1:18591", HOST], stdin=subprocess.DEVNULL,

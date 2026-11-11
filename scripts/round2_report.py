@@ -1,4 +1,5 @@
 """Matched, problem-clustered comparisons after all predefined evaluations finish."""
+
 import json
 from pathlib import Path
 import random
@@ -22,11 +23,36 @@ def paired(reference, candidate, key, repetitions=2000):
     samples = []
     for _ in range(repetitions):
         drawn = [values[rng.randrange(len(values))] for _ in values]
-        samples.append(sum(sum(group) for group in drawn) / sum(len(group) for group in drawn))
+        samples.append(
+            sum(sum(group) for group in drawn) / sum(len(group) for group in drawn)
+        )
     samples.sort()
-    return {"delta": sum(sum(g) for g in values)/len(reference), "wins": wins, "losses": losses,
-            "ci95": [samples[int(.025*repetitions)], samples[min(repetitions-1, int(.975*repetitions))]],
-            "clusters": len(groups), "bootstrap_repetitions": repetitions}
+    return {
+        "delta": sum(sum(g) for g in values) / len(reference),
+        "wins": wins,
+        "losses": losses,
+        "ci95": [
+            samples[int(0.025 * repetitions)],
+            samples[min(repetitions - 1, int(0.975 * repetitions))],
+        ],
+        "clusters": len(groups),
+        "bootstrap_repetitions": repetitions,
+    }
+
+
+def compatible_graders(left, right):
+    if left == right:
+        return True
+    proof = Path("results/round2/remote/server-grader-validation.json")
+    if not proof.exists() or not json.loads(proof.read_text()).get("passed"):
+        return False
+    fields = ("ready", "tests_sha256", "humaneval_sha256", "python", "timeout")
+    if not left or not right or any(left.get(k) != right.get(k) for k in fields):
+        return False
+    return {left.get("sandbox"), right.get("sandbox")} <= {
+        "bubblewrap",
+        "chroot-seccomp",
+    }
 
 
 def report():
@@ -34,7 +60,9 @@ def report():
     files = list((root / "baselines").glob("*.summary.json"))
     files += list((root / "baselines-common-parent").glob("*.summary.json"))
     for family in ("dpo", "grpo"):
-        files += list((root / "remote" / (family + "-selected")).glob("M*.summary.json"))
+        files += list(
+            (root / "remote" / (family + "-selected")).glob("M*.summary.json")
+        )
     reports = {}
     for path in files:
         value = json.loads(path.read_text())
@@ -44,44 +72,113 @@ def report():
         if p["arm"] == "M1" and p["model"] != "checkpoints/M1-merged-round2":
             continue
         reports[(p["arm"], p["controller"], p["benchmark"])] = (path, value)
-    expected = [(arm, controller, benchmark) for arm in ("M0", "M1", "M2-hard", "M3-long")
-                for controller in ("v1",) for benchmark in ("runbugrun", "humanevalpack")]
+    expected = [
+        (arm, controller, benchmark)
+        for arm in ("M0", "M1", "M2-hard", "M3-long")
+        for controller in ("v1",)
+        for benchmark in ("runbugrun", "humanevalpack")
+    ]
     missing = [key for key in expected if key not in reports]
-    atomic_json(root / "report-status.json", {"state": "waiting" if missing else "completed",
-                                              "completed_evaluations": len(reports), "missing": missing})
+    atomic_json(
+        root / "report-status.json",
+        {
+            "state": "waiting" if missing else "completed",
+            "completed_evaluations": len(reports),
+            "missing": missing,
+        },
+    )
     if missing:
         return False
-    lines = ["# RepairRL round 2 — measured results", "", "Models were selected on dev; V1 is the active controller; historical V3 results remain archived.", ""]
+    lines = [
+        "# RepairRL round 2 — measured results",
+        "",
+        "Models were selected on dev; V1 is the active controller; historical V3 results remain archived.",
+        "",
+    ]
     comparisons = []
-    keys = ["controller", "benchmark", "data_sha256", "tests_sha256", "task_ids", "max_context",
-            "max_new_tokens", "max_attempts", "max_diagnoses", "diagnosis_tokens", "retry_temperature",
-            "seed", "quantized", "controller_sha256", "generator_sha256", "grader"]
+    keys = [
+        "controller",
+        "benchmark",
+        "data_sha256",
+        "tests_sha256",
+        "task_ids",
+        "max_context",
+        "max_new_tokens",
+        "max_attempts",
+        "max_diagnoses",
+        "diagnosis_tokens",
+        "retry_temperature",
+        "seed",
+        "quantized",
+        "controller_sha256",
+        "generator_sha256",
+        "grader",
+    ]
     for controller in ("v1",):
         for benchmark in ("runbugrun", "humanevalpack"):
-            lines += [f"## {benchmark} / {controller}", "", "| Model | pass@1 | agent@3 | validity | diagnosis calls |", "|---|---:|---:|---:|---:|"]
+            lines += [
+                f"## {benchmark} / {controller}",
+                "",
+                "| Model | pass@1 | agent@3 | validity | diagnosis calls |",
+                "|---|---:|---:|---:|---:|",
+            ]
             baseline_path, baseline = reports[("M1", controller, benchmark)]
-            reference = read_jsonl(baseline_path.with_name(baseline_path.name.replace(".summary.json", ".jsonl")))
+            reference = read_jsonl(
+                baseline_path.with_name(
+                    baseline_path.name.replace(".summary.json", ".jsonl")
+                )
+            )
             for arm in ("M0", "M1", "M2-hard", "M3-long"):
                 path, value = reports[(arm, controller, benchmark)]
-                if any(value["protocol"].get(k) != baseline["protocol"].get(k) for k in keys):
-                    raise ValueError(f"Protocol mismatch for {arm}/{controller}/{benchmark}")
+                if any(
+                    value["protocol"].get(k) != baseline["protocol"].get(k)
+                    for k in keys
+                    if k != "grader"
+                ) or not compatible_graders(
+                    value["protocol"].get("grader"), baseline["protocol"].get("grader")
+                ):
+                    raise ValueError(
+                        f"Protocol mismatch for {arm}/{controller}/{benchmark}"
+                    )
                 m = value["metrics"]
-                lines.append(f"| {arm} | {m['pass@1']:.1%} | {m['agent@3']:.1%} | {m['validity']:.1%} | {m['diagnosis_calls']} |")
+                lines.append(
+                    f"| {arm} | {m['pass@1']:.1%} | {m['agent@3']:.1%} | {m['validity']:.1%} | {m['diagnosis_calls']} |"
+                )
                 if arm in {"M2-hard", "M3-long"}:
-                    candidates = read_jsonl(path.with_name(path.name.replace(".summary.json", ".jsonl")))
+                    candidates = read_jsonl(
+                        path.with_name(path.name.replace(".summary.json", ".jsonl"))
+                    )
                     for key in ("pass_at_1", "agent_at_3"):
                         result = paired(reference, candidates, key)
-                        comparisons.append({"arm": arm, "controller": controller, "benchmark": benchmark,
-                                            "metric": key, **result})
+                        comparisons.append(
+                            {
+                                "arm": arm,
+                                "controller": controller,
+                                "benchmark": benchmark,
+                                "metric": key,
+                                **result,
+                            }
+                        )
             lines += [""]
-    lines += ["## Paired changes versus M1", "", "Intervals use problem-clustered bootstrap; they do not correct for all experiment choices.", ""]
+    lines += [
+        "## Paired changes versus M1",
+        "",
+        "Intervals use problem-clustered bootstrap; they do not correct for all experiment choices.",
+        "",
+    ]
     for item in comparisons:
         lo, hi = item["ci95"]
-        lines.append(f"- {item['arm']} / {item['controller']} / {item['benchmark']} / {item['metric']}: "
-            f"{item['delta']*100:+.1f} pp; 95% interval [{lo*100:+.1f}, {hi*100:+.1f}] pp; "
-            f"{item['wins']} wins / {item['losses']} losses.")
-    lines += ["", "Results from the old NF4/512-token protocol remain separate. Round 2 uses FP16 inference and a 768-token code cap for every arm.",
-              "RunBugRun uses selected 2–10-test suites. HumanEvalPack may overlap foundation-model pretraining. No learning improvement is assumed."]
+        lines.append(
+            f"- {item['arm']} / {item['controller']} / {item['benchmark']} / {item['metric']}: "
+            f"{item['delta'] * 100:+.1f} pp; 95% interval [{lo * 100:+.1f}, {hi * 100:+.1f}] pp; "
+            f"{item['wins']} wins / {item['losses']} losses."
+        )
+    lines += [
+        "",
+        "Results from the old NF4/512-token protocol remain separate. Round 2 uses FP16 inference and a 768-token code cap for every arm.",
+        "Grading moved from local Bubblewrap to server chroot/seccomp using the preserved Python3.14.4 runtime. Migration validation covers gold/bug outcomes; isolation/backend timing differs, and runs crossing the migration are documented in the migration ledger.",
+        "RunBugRun uses selected 2–10-test suites. HumanEvalPack may overlap foundation-model pretraining. No learning improvement is assumed.",
+    ]
     (root / "FINAL_ROUND2.md").write_text("\n".join(lines) + "\n")
     atomic_json(root / "paired-comparisons.json", comparisons)
     return True
