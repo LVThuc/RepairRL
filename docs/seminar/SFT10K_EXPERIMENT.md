@@ -1,4 +1,6 @@
-# Expanded SFT experiment (queued 2026-11-11)
+# Expanded SFT experiment (cancelled 2026-11-11)
+
+**Current status:** Cancelled by the user during local CPU data preparation. The preparation process group was terminated and the remote waiting service stopped with autostart disabled. 2,103 accepted pairs (2,000 existing + 103 newly verified) remain preserved. No 10k SFT training started. The specification below records the cancelled setup.
 
 User requested a fresh SFT run from **M0 Instruct**, targeting 10,000 pairs, after selected DPO evaluation finishes. This does not train from the untouched pretrained PT-base comparator or continue M1.
 
