@@ -381,7 +381,7 @@ def curve(title, subtitle, steps, counts, color, selected, footer):
 def figure4(data):
     return curve(
         "DPO dev progression: early peak, later decline",
-        "Repair pass@1 on a fixed 60-problem dev set — not training preference accuracy",
+        "Repair pass@1 on a fixed 60-problem dev set",
         [r["step"] for r in data],
         [r["passed"] for r in data],
         PURPLE,
@@ -408,7 +408,7 @@ def figure6(rows):
     fig.text(
         0.065,
         0.94,
-        "Held-out repair: compare the models, not training loss",
+        "Model comparison: held-out first-attempt repair",
         fontsize=27,
         weight="bold",
         va="top",
@@ -533,7 +533,7 @@ def figure7(rows):
 def figure8(case):
     fig, ax = canvas(
         "Actual repair: a cup swap must update the state only once",
-        "RunBugRun 21346 / p00047 · measured first attempts · curated example, not a representative sample",
+        "RunBugRun 21346 / p00047 · measured first attempts · curated held-out demonstration",
     )
     box(ax, 0.035, 0.39, 0.255, 0.38, "Original bug", "", RED, title_size=19)
     ax.text(
